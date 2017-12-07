@@ -21,7 +21,10 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.ui.menu:not(.vertical) .item>.button#login{
+  top: 2px;
+}
+
+.ui.menu:not(.vertical) .item>.button#login:hover{
+  box-shadow: 0 0 0 2px #FFF inset!important;
 }

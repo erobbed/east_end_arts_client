@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
 import MyCalendar from './components/Calendar'
+import NavBar from './components/NavBar'
+import './App.css';
+import 'semantic-ui-css/semantic.min.css';
 
 class App extends Component {
 
@@ -13,6 +15,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        <NavBar/>
         <h1 className="App-title">Welcome to SHACC</h1>
         <button onClick={this.handleClick}>Click Me to Test API</button><br/><br/>
         <MyCalendar myEventsList={myEventsList}/>
