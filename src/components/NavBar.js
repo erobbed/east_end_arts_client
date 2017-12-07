@@ -1,5 +1,6 @@
 import React from 'react';
-import { Menu, Segment, Button } from 'semantic-ui-react';
+import { Menu, Segment, Button, Modal } from 'semantic-ui-react';
+import FormContainer from './FormContainer.js'
 import { NavLink } from 'react-router-dom';
 
 class NavBar extends React.Component{
@@ -20,7 +21,11 @@ class NavBar extends React.Component{
           <Menu.Item as={NavLink} to="/" exact name="Home" active={activeItem === 'Home'} onClick={this.handleItemClick} key="home" />
           <Menu.Menu position="right" key="right">
             <Menu.Item as={NavLink} to="/login" key="login">
-              <Button basic inverted secondary color="black" id="login">Log In</Button>
+              <Modal size='tiny' trigger={<Button basic inverted secondary color="black" id="login">Log In</Button>}>
+                <Modal.Content>
+                    <FormContainer/>
+                </Modal.Content>
+              </Modal>
             </Menu.Item>
           </Menu.Menu>
         </Menu>
