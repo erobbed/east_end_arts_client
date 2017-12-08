@@ -7,7 +7,7 @@ import 'semantic-ui-css/semantic.min.css';
 class App extends Component {
 
   handleClick = () => {
-    fetch('http://localhost:3000/api/v1/test').then(res => res.json()).then(json => console.log(json))
+    fetch(`${process.env.REACT_APP_RAILS_URL}test`).then(res => res.json()).then(json => console.log(json))
   }
 
   render() {

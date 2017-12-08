@@ -11,6 +11,7 @@
 
 .App-title {
   font-size: 1.5em;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 .App-intro {
@@ -23,4 +24,15 @@
 
 .ui.menu:not(.vertical) .item>.button#login:hover{
   box-shadow: 0 0 0 2px #FFF inset!important;
+}
+
+.rbc-calendar{
+  margin: 0 auto;
+  width: 90%;
+  height: 50em;
+}
+
+span.rbc-toolbar-label{
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 150%;
 }

@@ -19,20 +19,18 @@ class FormContainer extends React.Component {
   render(){
 
     let loginButton = (
-      <div onClick={this.handleClick}>
-        <Button animated='fade' color='green'>
-          <Button.Content visible>Log In</Button.Content>
-          <Button.Content hidden>
-            <Icon name='user' />
-          </Button.Content>
-        </Button>
-      </div>
+      <Button animated='fade' color='green' onClick={this.handleClick}>
+        <Button.Content visible>Log In</Button.Content>
+        <Button.Content hidden>
+          <Icon name='user' />
+        </Button.Content>
+      </Button>
     )
 
     let signupButton =  (
-      <div onClick={this.handleClick}>
+      <div>
         <p>Not a user? Sign up!</p>
-        <Button animated='fade' color='blue'>
+        <Button animated='fade' color='blue' onClick={this.handleClick}>
           <Button.Content visible>Sign Up</Button.Content>
           <Button.Content hidden>
             <Icon name='user' />

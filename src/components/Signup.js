@@ -1,29 +1,47 @@
 import React from 'react';
 import { Form, Input, Button } from 'semantic-ui-react'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { signup } from '../actions/authActions'
 
-const Signup = (props) => {
+class Signup extends React.Component{
 
-  return(
-    <Form>
-      <Form.Field required>
-        <label>Username</label>
-        <Input placeholder='Username' />
-      </Form.Field>
-      <Form.Field required>
-        <label>Email</label>
-        <Input placeholder='example@example.com' />
-      </Form.Field>
-      <Form.Field required>
-        <label>Password</label>
-        <Input placeholder='password' />
-      </Form.Field>
-      <Form.Field required>
-        <label>Confirm Password</label>
-        <Input placeholder='confirm password' />
-      </Form.Field>
-      <Button type='submit'>Submit</Button>
-    </Form>
-  )
+  state = {}
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value
+    })
+  }
+
+  render(){
+    console.log(this.state);
+    return(
+      <Form>
+        <Form.Field required>
+          <label>Username</label>
+          <Input placeholder='username' onChange={this.handleChange} id='username'/>
+        </Form.Field>
+        <Form.Field required>
+          <label>Email</label>
+          <Input placeholder='example@example.com'  onChange={this.handleChange} id='email'/>
+        </Form.Field>
+        <Form.Field required>
+          <label>Password</label>
+          <Input placeholder='password' onChange={this.handleChange} id='password' type='password'/>
+        </Form.Field>
+        <Form.Field required>
+          <label>Confirm Password</label>
+          <Input placeholder='confirm password' onChange={this.handleChange} id='password confirmation' type='password' />
+        </Form.Field>
+        <Button type='submit'>Submit</Button>
+      </Form>
+    )
+  }
 }
 
-export default Signup
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({signup}, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(Signup)
