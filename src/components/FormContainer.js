@@ -1,7 +1,8 @@
 import React from 'react';
 import Login from './Login';
 import Signup from './Signup';
-import { Button, Icon } from 'semantic-ui-react'
+import SignupButton from './assets/SignupButton'
+import LoginButton from './assets/LoginButton'
 
 class FormContainer extends React.Component {
 
@@ -15,35 +16,12 @@ class FormContainer extends React.Component {
     })
   }
 
-
   render(){
-
-    let loginButton = (
-      <Button animated='fade' color='green' onClick={this.handleClick}>
-        <Button.Content visible>Log In</Button.Content>
-        <Button.Content hidden>
-          <Icon name='user' />
-        </Button.Content>
-      </Button>
-    )
-
-    let signupButton =  (
-      <div>
-        <p>Not a user? Sign up!</p>
-        <Button animated='fade' color='blue' onClick={this.handleClick}>
-          <Button.Content visible>Sign Up</Button.Content>
-          <Button.Content hidden>
-            <Icon name='user' />
-          </Button.Content>
-        </Button>
-      </div>
-    )
-
     return(
       <div>
         { this.state.alreadyUser ? <Login/> : <Signup/> }
         <center>
-          { this.state.alreadyUser ? signupButton : loginButton }
+          { this.state.alreadyUser ? <SignupButton handleClick={this.handleClick}/> : <LoginButton handleClick={this.handleClick}/> }
         </center>
       </div>
     )

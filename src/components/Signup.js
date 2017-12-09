@@ -14,10 +14,13 @@ class Signup extends React.Component{
     })
   }
 
+  handleSubmit = (e) => {
+    this.props.signup(this.state)
+  }
+
   render(){
-    console.log(this.state);
     return(
-      <Form>
+      <Form onSubmit={this.handleSubmit}>
         <Form.Field required>
           <label>Username</label>
           <Input placeholder='username' onChange={this.handleChange} id='username'/>
@@ -34,7 +37,7 @@ class Signup extends React.Component{
           <label>Confirm Password</label>
           <Input placeholder='confirm password' onChange={this.handleChange} id='password confirmation' type='password' />
         </Form.Field>
-        <Button type='submit'>Submit</Button>
+        <Button type='submit'>Sign Up</Button>
       </Form>
     )
   }

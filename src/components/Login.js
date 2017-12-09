@@ -12,7 +12,6 @@ class Login extends React.Component{
   }
 
   render(){
-    console.log(this.state);
     return(
       <Form>
         <Form.Field>
@@ -23,7 +22,7 @@ class Login extends React.Component{
           <label>Password</label>
           <Input type='password' placeholder='password' onChange={this.handleChange} id='password' />
         </Form.Field>
-        <Button type='submit'>Submit</Button>
+        <Button type='submit'>Log In</Button>
       </Form>
     )
   }
