@@ -18,11 +18,11 @@
   font-size: large;
 }
 
-.ui.menu:not(.vertical) .item>.button#login{
+.ui.menu:not(.vertical) .item>.button#log{
   top: 2px;
 }
 
-.ui.menu:not(.vertical) .item>.button#login:hover{
+.ui.menu:not(.vertical) .item>.button#log:hover{
   box-shadow: 0 0 0 2px #FFF inset!important;
 }
 

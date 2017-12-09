@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
-import MyCalendar from './components/Calendar'
-import NavBar from './components/NavBar'
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { currentUser } from './actions/authActions';
+import MyCalendar from './components/Calendar';
+import NavBar from './components/NavBar';
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
 
 class App extends Component {
 
-  handleClick = () => {
-    fetch(`${process.env.REACT_APP_RAILS_URL}test`).then(res => res.json()).then(json => console.log(json))
+  componentDidMount(){
+    const jwt = localStorage.getItem('jwt');
+    if (jwt) {
+      return this.props.currentUser(jwt)
+    }
   }
 
   render() {
@@ -17,11 +23,15 @@ class App extends Component {
       <div className="App">
         <NavBar/>
         <h1 className="App-title">Welcome to SHACC</h1>
-        <button onClick={this.handleClick}>Click Me to Test API</button><br/><br/>
+        <br/>
         <MyCalendar myEventsList={myEventsList}/>
       </div>
     );
   }
 }
 
-export default App;
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({currentUser}, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(App);

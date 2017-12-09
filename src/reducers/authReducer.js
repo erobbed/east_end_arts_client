@@ -1,4 +1,4 @@
-function authReducer(state = {}, action){
+function authReducer(state = {user: ''}, action){
   switch (action.type) {
     case "LOG_IN":
       localStorage.setItem('jwt', action.payload.jwt)
@@ -10,7 +10,6 @@ function authReducer(state = {}, action){
     default:
       return state
   }
-
 }
 
 export default authReducer
