@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { currentUser } from './actions/authActions';
 import MyCalendar from './components/Calendar';
-import NavBar from './components/NavBar';
+import NavBar from './components/assets/NavBar';
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
 
