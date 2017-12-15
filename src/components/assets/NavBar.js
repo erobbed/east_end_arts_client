@@ -3,8 +3,8 @@ import { Menu, Segment, Button } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
-import { logOut} from '../actions/authActions'
-import ModalContainer from './Modal'
+import { logOut} from '../../actions/authActions'
+import ModalContainer from '../Modal'
 
 class NavBar extends React.Component{
 

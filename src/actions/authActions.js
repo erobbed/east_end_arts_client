@@ -1,18 +1,3 @@
-export function authorize(code){
-  const body = {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-      'accept': 'application/json',
-      'Authorization': `Token token=${localStorage.getItem('jwt')}`
-    }
-  }
-
-  return (dispatch) => {
-    return fetch(`${process.env.REACT_APP_RAILS_URL}`, body)
-  }
-}
-
 export function signup(input){
   let user = {
     user: {
@@ -38,7 +23,8 @@ export function signup(input){
         dispatch({type: "LOG_IN", payload: {
             user: res.user,
             jwt: res.jwt,
-            id: res.user.id
+            id: res.user.id,
+            groups: res.groups
           }
         })
   )}
@@ -68,7 +54,8 @@ export function login(input){
         dispatch({type: "LOG_IN", payload: {
             user: res.user,
             jwt: res.jwt,
-            id: res.user.id
+            id: res.user.id,
+            groups: res.groups
           }
         })
   )}
@@ -88,7 +75,8 @@ export function currentUser(jwt){
     .then(res => dispatch({type: "LOG_IN", payload: {
         user: res.user,
         jwt: jwt,
-        id: res.user.id
+        id: res.user.id,
+        groups: res.groups
       }
     })
   )}
@@ -98,7 +86,8 @@ export function logOut(){
   return {
     type: "LOG_OUT",
     payload: {
-      user: ''
+      user: '',
+      groups: []
     }
   }
 }
