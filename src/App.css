@@ -26,6 +26,14 @@
   box-shadow: 0 0 0 2px #FFF inset!important;
 }
 
+.list>.item a:hover{
+  font-weight: bold;
+}
+
+.list>.item a{
+  padding: 1%;
+}
+
 .rbc-calendar{
   margin: 0 auto;
   height: 50em;
