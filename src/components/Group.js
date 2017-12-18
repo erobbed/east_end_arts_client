@@ -1,5 +1,6 @@
 import React from 'react';
 import { List } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 class Group extends React.Component{
 
@@ -8,7 +9,7 @@ class Group extends React.Component{
   render(){
     return(
       <List.Item onClick={this.handleClick}>
-        {this.props.group.name}
+        <Link to={`/${this.props.group.name}`}>{this.props.group.name}</Link>
       </List.Item>
     )
   }
