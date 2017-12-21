@@ -6,11 +6,12 @@ import { combineReducers, applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import registerServiceWorker from './registerServiceWorker';
-import authReducer from './reducers/authReducer'
+import authReducer from './reducers/authReducer';
+import groupReducer from './reducers/groupReducer'
 import thunk from 'redux-thunk';
 import './index.css';
 
-const rootReducer = combineReducers({users: authReducer});
+const rootReducer = combineReducers({auth: authReducer, groups: groupReducer});
 const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(thunk))

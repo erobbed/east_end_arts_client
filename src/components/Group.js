@@ -1,18 +1,24 @@
 import React from 'react';
 import { List } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { setGroup } from '../actions/groupActions'
 
 class Group extends React.Component{
 
-  handleClick = () => console.log('click!')
+  handleClick = () => this.props.setGroup(this.props.group)
 
   render(){
     return(
       <List.Item onClick={this.handleClick}>
-        <Link to={`/${this.props.group.name}`}>{this.props.group.name}</Link>
+        {this.props.group.name}
       </List.Item>
     )
   }
 }
 
-export default Group
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({setGroup}, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(Group)

@@ -26,6 +26,15 @@
   box-shadow: 0 0 0 2px #FFF inset!important;
 }
 
+.ui.secondary.inverted.pointing.menu.main-nav{
+  border-color: transparent;
+}
+
+.ui.inverted.segment.nav{
+  background: green;
+  padding: .5em;
+}
+
 .list>.item a:hover{
   font-weight: bold;
 }
