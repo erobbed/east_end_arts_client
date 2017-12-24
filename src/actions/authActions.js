@@ -19,14 +19,19 @@ export function signup(input){
   return (dispatch) => {
     return fetch(`${process.env.REACT_APP_RAILS_URL}/users`, body)
       .then(res => res.json())
-      .then(res =>
-        dispatch({type: "LOG_IN", payload: {
-            user: res.user,
-            jwt: res.jwt,
-            id: res.user.id,
-            groups: res.groups
-          }
-        })
+      .then(res => {
+        if (res.success) {
+          dispatch({type: "LOG_IN", payload: {
+              user: res.user,
+              jwt: res.jwt,
+              id: res.user.id,
+              groups: res.groups
+            }
+          })
+        } else {
+          return res.failure
+        }
+      }
   )}
 }
 
@@ -50,14 +55,19 @@ export function login(input){
   return (dispatch) => {
     return fetch(`${process.env.REACT_APP_RAILS_URL}/login`, body)
       .then(res => res.json())
-      .then(res =>
-        dispatch({type: "LOG_IN", payload: {
-            user: res.user,
-            jwt: res.jwt,
-            id: res.user.id,
-            groups: res.groups
-          }
-        })
+      .then(res => {
+        if (res.success){
+          dispatch({type: "LOG_IN", payload: {
+              user: res.user,
+              jwt: res.jwt,
+              id: res.user.id,
+              groups: res.groups
+            }
+          })
+        } else {
+          return res.failure
+        }
+      }
   )}
 }
 

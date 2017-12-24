@@ -6,7 +6,12 @@ import { signup } from '../actions/authActions'
 
 class Signup extends React.Component{
 
-  state = {}
+  state = {
+    username: '',
+    email: '',
+    password: '',
+    'password confirmation': ''
+  }
 
   handleChange = (e) => {
     this.setState({
@@ -15,10 +20,32 @@ class Signup extends React.Component{
   }
 
   handleSubmit = (e) => {
-    this.props.signup(this.state)
+    let valid = true
+    for (var prop in this.state) {
+      if (!this.state[prop]) {
+        valid = false
+        alert(`${prop} cannot be blank`)
+      }
+    }
+
+    if (valid){
+      this.props.signup(this.state)
+        .then(failure => {
+  			if (failure){
+  				for(let key in failure){
+  					failure[key].forEach(message => {
+  						alert(key + " " + message)
+  					})
+  				}
+  			}
+  		})
+    } else {
+      e.preventDefault()
+    }
   }
 
   render(){
+
     return(
       <Form onSubmit={this.handleSubmit}>
         <Form.Field required>

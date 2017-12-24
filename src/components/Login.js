@@ -6,7 +6,10 @@ import { login } from '../actions/authActions';
 
 class Login extends React.Component{
 
-  state = {}
+  state = {
+    username: '',
+    password: ''
+  }
 
   handleChange = (e) => {
     this.setState({
@@ -15,7 +18,24 @@ class Login extends React.Component{
   }
 
   handleSubmit = (e) => {
-    this.props.login(this.state)
+    let valid = true
+    for (var prop in this.state) {
+      if (!this.state[prop]) {
+        valid = false
+        alert(`${prop} cannot be blank`)
+      }
+    }
+
+    if (valid){
+      this.props.login(this.state)
+        .then(failure => {
+  			if (failure){
+  				alert(failure)
+  			}
+  		})
+    } else {
+      e.preventDefault()
+    }
   }
 
   render(){
