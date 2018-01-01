@@ -1,6 +1,7 @@
 import React from 'react';
 import Group from './Group';
-import { List, Button, Icon } from 'semantic-ui-react'
+import { List } from 'semantic-ui-react'
+import AddGroup from './AddGroup'
 
 const GroupContainer = (props) => {
 
@@ -8,10 +9,10 @@ const GroupContainer = (props) => {
 
   return(
     <div>
-      <Button size='mini' className='addgroup' icon><Icon name='plus'/></Button>
       <List divided verticalAlign='middle' className='groups'>
           {groups}
       </List>
+      <AddGroup/>
     </div>
   )
 }
