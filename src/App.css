@@ -66,3 +66,7 @@ span.rbc-toolbar-label{
   width: 95%;
   margin: 0 auto;
 }
+
+.ui.icon.button.addgroup{
+  margin: 10px;
+}

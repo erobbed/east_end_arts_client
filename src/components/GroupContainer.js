@@ -7,10 +7,12 @@ const GroupContainer = (props) => {
   let groups = props.groups.map( group => <Group group={group} key={group.id}/> )
 
   return(
-    <List divided verticalAlign='middle' className='groups'>
-        <Button size='mini' icon><Icon name='plus' className='addgroup'/></Button>
-        {groups}
-    </List>
+    <div>
+      <Button size='mini' className='addgroup' icon><Icon name='plus'/></Button>
+      <List divided verticalAlign='middle' className='groups'>
+          {groups}
+      </List>
+    </div>
   )
 }
 
