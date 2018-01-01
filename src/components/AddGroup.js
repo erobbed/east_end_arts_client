@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Icon } from 'semantic-ui-react'
+import { Button, Icon, Modal } from 'semantic-ui-react'
 
 export default class AddGroup extends React.Component{
 
@@ -9,7 +9,12 @@ export default class AddGroup extends React.Component{
 
   render(){
     return(
-      <Button size='mini' className='addgroup' icon onClick={this.handleClick}><Icon name='plus'/></Button>
+      <Modal size='tiny' trigger={<Button size='mini' className='addgroup' icon onClick={this.handleClick}><Icon name='plus'/></Button>}>
+        <Modal.Content>
+          <div>hello world</div>
+        </Modal.Content>
+      </Modal>
+
     )
   }
 }
