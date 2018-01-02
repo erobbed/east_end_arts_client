@@ -1,4 +1,4 @@
-export function setGroup(group){
+export function selectGroup(group){
 
   const body = {
     method: 'POST',
@@ -12,7 +12,7 @@ export function setGroup(group){
   return (dispatch) => {
     return fetch(`${process.env.REACT_APP_RAILS_URL}/group`, body)
       .then(res => res.json())
-      .then(res => dispatch({type: 'SET_GROUP', payload: res }) )
+      .then(res => dispatch({type: 'SELECT_GROUP', payload: res }) )
   }
 }
 
@@ -40,11 +40,5 @@ export function createGroup(group, userId){
         }
       }
     )
-  }
-}
-
-export function selectGroup(group){
-  return (dispatch) => {
-    dispatch({type: 'SELECT_GROUP', payload: {group: group} })
   }
 }

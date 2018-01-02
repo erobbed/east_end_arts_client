@@ -18,7 +18,9 @@ class App extends Component {
   }
 
   render() {
-    let myEventsList = (this.props.selectedGroup ? this.props.selectedGroup.events : [{title: 'Demo For Shane', startDate: new Date(), endDate: new Date()}])
+    let myEventsList = (this.props.selectedGroup ? this.props.selectedGroup.events : [{title: 'Demo For Shane', startDate: new Date(), endDate: new Date()}] )
+    myEventsList = myEventsList.filter( event => event.public )
+    
     return (
       <div className="App">
         <NavBar/>
