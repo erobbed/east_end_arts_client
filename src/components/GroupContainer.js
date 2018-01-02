@@ -1,7 +1,7 @@
 import React from 'react';
 import Group from './Group';
 import { List } from 'semantic-ui-react'
-import AddGroup from './AddGroup'
+import AddGroupModal from './AddGroupModal'
 
 const GroupContainer = (props) => {
 
@@ -12,7 +12,7 @@ const GroupContainer = (props) => {
       <List divided verticalAlign='middle' className='groups'>
           {groups}
       </List>
-      <AddGroup/>
+      <AddGroupModal/>
     </div>
   )
 }
