@@ -35,12 +35,15 @@
   padding: .5em;
 }
 
-.list>.item a:hover{
+.list>.item:hover{
   font-weight: bold;
+  cursor: pointer;
 }
 
-.list>.item a{
-  padding: 1%;
+.list>.item{
+  padding: 2%;
+  margin: 0 auto;
+  font-size: 90%;
 }
 
 .rbc-calendar{
@@ -54,9 +57,10 @@ span.rbc-toolbar-label{
   font-size: 150%;
 }
 
-.groups{
-  margin: 0;
+.ui.list.groups{
+  margin: 0 auto;
   text-align: center;
+  width: auto;
 }
 
 .page{

@@ -39,7 +39,7 @@ function mapDispatchToProps(dispatch){
 
 function mapStateToProps(state){
   console.log(state);
-  return {loggedIn: state.auth.loggedIn, user: state.auth.user, groups: state.auth.groups}
+  return {loggedIn: state.auth.loggedIn, user: state.auth.user, groups: state.groups.groups}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,7 +1,9 @@
-function groupReducer(state = {group: {}}, action){
+function groupReducer(state = {groups: [], selectedGroup: {} }, action){
   switch (action.type) {
-    case "SET_GROUP":
-      return Object.assign({}, state, {group: action.payload})
+    case "SET_GROUPS":
+      return Object.assign({}, state, {groups: action.payload.groups})
+    case "SELECTED_GROUP":
+      return Object.assign({}, state, {selectedGroup: action.payload.group})
     default:
       return state
   }

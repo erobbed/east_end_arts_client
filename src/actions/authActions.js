@@ -25,6 +25,10 @@ export function signup(input){
               user: res.user,
               jwt: res.jwt,
               id: res.user.id,
+            }
+          })
+
+          dispatch({type: "SET_GROUPS", payload: {
               groups: res.groups
             }
           })
@@ -61,6 +65,10 @@ export function login(input){
               user: res.user,
               jwt: res.jwt,
               id: res.user.id,
+            }
+          })
+
+          dispatch({type: "SET_GROUPS", payload: {
               groups: res.groups
             }
           })
@@ -82,13 +90,19 @@ export function currentUser(jwt){
   return (dispatch) => {
     return fetch(`${process.env.REACT_APP_RAILS_URL}/me`, body)
     .then(res => res.json())
-    .then(res => dispatch({type: "LOG_IN", payload: {
-        user: res.user,
-        jwt: jwt,
-        id: res.user.id,
-        groups: res.groups
-      }
-    })
+    .then(res => {
+        dispatch({type: "LOG_IN", payload: {
+          user: res.user,
+          jwt: jwt,
+          id: res.user.id,
+        }
+      })
+
+      dispatch({type: "SET_GROUPS", payload: {
+          groups: res.groups
+        }
+      })
+    }
   )}
 }
 
