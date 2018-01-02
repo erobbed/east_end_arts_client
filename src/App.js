@@ -18,9 +18,11 @@ class App extends Component {
   }
 
   render() {
-    let myEventsList = (this.props.selectedGroup ? this.props.selectedGroup.events : [{title: 'Demo For Shane', startDate: new Date(), endDate: new Date()}] )
-    myEventsList = myEventsList.filter( event => event.public )
-    
+    let myEventsList = (this.props.selectedGroup ? this.props.selectedGroup.events : this.props.events)
+    // myEventsList = myEventsList.filter( event => event.public )
+    // [{title: 'Demo For Shane', startDate: new Date(), endDate: new Date()}]
+
+
     return (
       <div className="App">
         <NavBar/>
@@ -41,7 +43,7 @@ function mapDispatchToProps(dispatch){
 
 function mapStateToProps(state){
   console.log(state);
-  return {loggedIn: state.auth.loggedIn, user: state.auth.user, groups: state.groups.groups, selectedGroup: state.groups.selectedGroup}
+  return {loggedIn: state.auth.loggedIn, user: state.auth.user, groups: state.groups.groups, selectedGroup: state.groups.selectedGroup, events: state.events.all}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
