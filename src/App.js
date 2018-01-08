@@ -20,7 +20,6 @@ class App extends Component {
   render() {
     let myEventsList = (this.props.selectedGroup ? this.props.selectedGroup.events : this.props.events)
     // myEventsList = myEventsList.filter( event => event.public )
-    // [{title: 'Demo For Shane', startDate: new Date(), endDate: new Date()}]
 
 
     return (

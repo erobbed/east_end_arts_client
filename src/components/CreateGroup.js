@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Button } from 'semantic-ui-react';
+import { Form, Button, Input } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createGroup } from '../actions/groupActions';
@@ -17,14 +17,17 @@ class GroupForm extends React.Component{
   }
 
   handleSubmit = () => {
-    this.props.createGroup(this.state.group, localStorage.getItem('id'));
+    this.props.createGroup(this.state.group, localStorage.getItem('id'))
   }
 
   render(){
     return(
       <Form onSubmit={this.handleSubmit}>
-        <Form.Input label='Group Name' onChange={this.handleChange}/>
-        <Button>Submit</Button>
+        <Form.Field>
+          <label>Group Name</label>
+          <Input onChange={this.handleChange}/>
+        </Form.Field>
+        <Button type='submit'>Submit</Button>
       </Form>
     )
   }

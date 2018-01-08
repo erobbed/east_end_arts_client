@@ -11,6 +11,19 @@ import eventReducer from './reducers/eventReducer';
 import groupReducer from './reducers/groupReducer'
 import thunk from 'redux-thunk';
 import './index.css';
+import firebase from 'firebase'
+
+
+let config = {
+    apiKey: "AIzaSyAv12yqtAwD5Ug1OAOkH2zBnaSKaEYyklo",
+    authDomain: "shacc-ed3ef.firebaseapp.com",
+    databaseURL: "https://shacc-ed3ef.firebaseio.com",
+    projectId: "shacc-ed3ef",
+    storageBucket: "shacc-ed3ef.appspot.com",
+    messagingSenderId: "853571361089"
+  };
+
+firebase.initializeApp(config)
 
 const rootReducer = combineReducers({auth: authReducer, groups: groupReducer, events: eventReducer});
 const store = createStore(

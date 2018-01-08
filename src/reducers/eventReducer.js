@@ -1,4 +1,4 @@
-function eventReducer(state = {all: []}, action){
+function eventReducer(state = {all: [{title: 'Demo For Shane', startDate: new Date(), endDate: new Date()}]}, action){
   switch (action.type) {
     case "SET_EVENTS":
       return Object.assign({}, state, {all: action.payload.events})

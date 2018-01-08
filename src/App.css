@@ -28,6 +28,7 @@
 
 .ui.secondary.inverted.pointing.menu.main-nav{
   border-color: transparent;
+  width: 100%
 }
 
 .ui.inverted.segment.nav{

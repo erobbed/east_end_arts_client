@@ -31,7 +31,7 @@ export function createGroup(group, userId){
       .then (res => res.json() )
       .then( res => {
         if (res.success) {
-          dispatch({type: 'ADD_GROUP', payload: {
+          dispatch({type: 'SET_GROUPS', payload: {
               groups: res.groups
             }
           })
