@@ -1,6 +1,8 @@
 import React from 'react';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
+import Event from './Event'
+// import { Modal } from 'semantic-ui-react'
 require ('react-big-calendar/lib/css/react-big-calendar.css')
 
 
@@ -8,13 +10,30 @@ BigCalendar.momentLocalizer(moment);
 
 class MyCalendar extends React.Component{
 
+  state={
+    selectedEvent: '',
+    isOpen: false
+  }
+
   handleSelect = (event) => {
-    console.log(event);
+    this.setState({
+      selectedEvent: event,
+      isOpen: !this.state.isOpen
+    })
+  }
+
+  handleClose = () => {
+    this.setState({
+      selectedEvent: '',
+      isOpen: !this.state.isOpen
+    })
   }
 
   render(){
+    console.log(this.state);
     return(
       <div className='column riight' style={this.props.style}>
+        {this.state.selectedEvent ? <Event open={this.state.isOpen} event={this.state.selectedEvent} close={this.handleClose}/> : null }
         <BigCalendar
           popup
           selectable
