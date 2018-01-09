@@ -26,7 +26,7 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar/>
-        <a href={url}><h1 className="App-title">Town of Southampton Arts and Culture Committee</h1></a>
+        <h1 className="App-title"><a href={url}>Town of Southampton Arts and Culture Committee</a></h1>
         <br/>
         <div className='page'>
           {this.props.loggedIn ? <div className='column left' style={left}><GroupContainer groups={this.props.groups} selectedGroup={this.props.selectedGroup}/></div> : <div className='column left' style={left}></div> }
