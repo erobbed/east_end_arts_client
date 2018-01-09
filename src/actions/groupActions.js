@@ -16,6 +16,10 @@ export function selectGroup(group){
   }
 }
 
+export function deselectGroup(){
+  return (dispatch) => dispatch({type: 'DESELECT'})
+}
+
 export function createGroup(group, userId){
   const body = {
     method: 'POST',

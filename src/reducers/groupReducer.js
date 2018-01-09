@@ -4,6 +4,8 @@ function groupReducer(state = {groups: [], selectedGroup: '' }, action){
       return Object.assign({}, state, {groups: action.payload.groups})
     case "SELECT_GROUP":
       return Object.assign({}, state, {selectedGroup: action.payload})
+    case "DESELECT":
+      return Object.assign({}, state, {selectedGroup: ''})
     default:
       return state
   }

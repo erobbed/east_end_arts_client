@@ -29,7 +29,7 @@ class App extends Component {
         <a href={url}><h1 className="App-title">Town of Southampton Arts and Culture Committee</h1></a>
         <br/>
         <div className='page'>
-          {this.props.loggedIn ? <div className='column left' style={left}><GroupContainer groups={this.props.groups}/></div> : <div className='column left' style={left}></div> }
+          {this.props.loggedIn ? <div className='column left' style={left}><GroupContainer groups={this.props.groups} selectedGroup={this.props.selectedGroup}/></div> : <div className='column left' style={left}></div> }
           <MyCalendar myEventsList={myEventsList} style={right}/>
         </div>
       </div>

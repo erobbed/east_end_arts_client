@@ -5,7 +5,7 @@ import AddGroupModal from './AddGroupModal'
 
 const GroupContainer = (props) => {
 
-  let groups = props.groups.map( group => <Group group={group} key={group.id}/> )
+  let groups = props.groups.map( group => <Group group={group} key={group.id} selectedGroup={props.selectedGroup}/> )
 
   return(
     <div className='column left'>
