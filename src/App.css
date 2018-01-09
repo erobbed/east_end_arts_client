@@ -88,10 +88,11 @@ span.rbc-toolbar-label{
 
 .left{
   float: left;
-  -webkit-transition: width 2s;
-    transition: width 2s;
-    overflow:hidden;
+  -webkit-transition: left 2s, ease-out width 2s;
+    transition: left 2s, ease-out width 2s;
+    overflow: hidden;
     font-size: 1em;
+    direction: rtl
 }
 
 .riight{

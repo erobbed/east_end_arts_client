@@ -18,6 +18,7 @@ class GroupForm extends React.Component{
 
   handleSubmit = () => {
     this.props.createGroup(this.state.group, localStorage.getItem('id'))
+    this.props.close()
   }
 
   render(){
