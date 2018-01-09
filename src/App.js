@@ -20,16 +20,17 @@ class App extends Component {
   render() {
     let myEventsList = (this.props.selectedGroup ? this.props.selectedGroup.events : this.props.events)
     // myEventsList = myEventsList.filter( event => event.public )
-
-
+    let left = this.props.loggedIn ? {width: '15%'} : {width: '0px'}
+    let right = this.props.loggedIn ? {width: '85%'} : {width: '100%', margin: '0 auto'}
+    let url = 'http://ny-southampton.civicplus.com/1054/Southampton-Arts-and-Culture-Committee-S'
     return (
       <div className="App">
         <NavBar/>
-        <h1 className="App-title">Welcome to SHACC</h1>
+        <a href={url}><h1 className="App-title">Town of Southampton Arts and Culture Committee</h1></a>
         <br/>
         <div className='page'>
-          {this.props.loggedIn ? <GroupContainer groups={this.props.groups} /> : <div></div> }
-          <MyCalendar myEventsList={myEventsList}/>
+          {this.props.loggedIn ? <div className='column left' style={left}><GroupContainer groups={this.props.groups}/></div> : <div className='column left' style={left}></div> }
+          <MyCalendar myEventsList={myEventsList} style={right}/>
         </div>
       </div>
     );

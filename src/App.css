@@ -1,3 +1,8 @@
+
+*{
+  font-size: 2vmin;
+}
+
 .App {
   text-align: center;
 }
@@ -11,7 +16,6 @@
 
 .App-title {
   font-size: 1.5em;
-  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 .App-intro {
@@ -55,21 +59,42 @@
 
 span.rbc-toolbar-label{
   font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 150%;
+  font-size: 3vmin;
+}
+
+div.rbc-toolbar>span.rbc-btn-group{
+  display: block;
 }
 
 .ui.list.groups{
   margin: 0 auto;
   text-align: center;
-  width: auto;
+}
+
+.left{
+  float: left;
+  -webkit-transition: width 2s;
+    transition: width 2s;
+    overflow:hidden;
+    font-size: 2vmin;
+}
+
+.riight{
+  float: right;
+  -webkit-transition: right 2s, width 2s;
+    transition: right 2s, width 2s;
+    direction: ltr;
 }
 
 .page{
-  display: grid;
-  grid-template-columns: .2fr 1.5fr;
-  grid-column-gap: 1%;
   width: 95%;
   margin: 0 auto;
+}
+
+.page:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .ui.icon.button.addgroup{

@@ -6,14 +6,26 @@ require ('react-big-calendar/lib/css/react-big-calendar.css')
 
 BigCalendar.momentLocalizer(moment);
 
-const MyCalendar = (props) => (
-  <div>
-    <BigCalendar
-      events={props.myEventsList}
-      startAccessor='startDate'
-      endAccessor='endDate'
-    />
-  </div>
-);
+class MyCalendar extends React.Component{
+
+  handleSelect = (event) => {
+    console.log(event);
+  }
+
+  render(){
+    return(
+      <div className='column riight' style={this.props.style}>
+        <BigCalendar
+          popup
+          selectable
+          events={this.props.myEventsList}
+          startAccessor='startDate'
+          endAccessor='endDate'
+          onSelectEvent={this.handleSelect}
+        />
+      </div>
+    )
+  }
+}
 
 export default MyCalendar

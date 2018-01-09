@@ -8,7 +8,7 @@ const GroupContainer = (props) => {
   let groups = props.groups.map( group => <Group group={group} key={group.id}/> )
 
   return(
-    <div>
+    <div className='column left'>
       <List divided verticalAlign='middle' className='groups'>
           {groups}
       </List>
