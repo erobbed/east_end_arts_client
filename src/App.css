@@ -62,8 +62,12 @@ span.rbc-toolbar-label{
   font-size: 3vmin;
 }
 
-div.rbc-toolbar>span.rbc-btn-group{
-  display: block;
+@media (max-width: 768px) {
+  div.rbc-toolbar>span.rbc-btn-group>button{
+    padding:2px 4px;
+    font-size:80%;
+    line-height: 1;
+  }
 }
 
 .ui.list.groups{
