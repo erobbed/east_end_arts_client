@@ -23,7 +23,7 @@
   }
 }
 
-@media (min-width: 769px) and (max-width: 992px) {
+@media (min-width: 769px) {
   .App-title>a{
     font-size: 1em;
   }
