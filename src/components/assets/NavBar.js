@@ -23,12 +23,12 @@ class NavBar extends React.Component{
     const { activeItem } = this.state
 
     const logout = (
-      <Button basic inverted secondary color="black" id="log" onClick={this.handleLogout}>Log Out</Button>
+      <Button basic secondary color="black" id="log" onClick={this.handleLogout}>Log Out</Button>
     )
 
     return(
-      <Segment inverted className="nav">
-        <Menu inverted pointing secondary className="main-nav" size="tiny">
+      <Segment className="nav">
+        <Menu pointing secondary className="main-nav" size="tiny">
           <Menu.Item as={NavLink} to="/" exact name="Home" active={activeItem === 'Home'} onClick={this.handleItemClick} key="home" />
           <Menu.Menu position="right" key="right">
             <Menu.Item>

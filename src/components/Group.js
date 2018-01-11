@@ -18,7 +18,7 @@ class Group extends React.Component{
   }
 
   render(){
-    let style = this.props.selectedGroup.id === this.props.group.id ? {fontWeight: 'bold', textDecoration: 'underline'} : {fontWeight: 'normal'}
+    let style = this.props.selectedGroup.id === this.props.group.id ? {fontWeight: 'bold', textDecoration: 'underline', color: 'green'} : {fontWeight: 'normal'}
     return(
       <List.Item onClick={this.handleClick} style={style}>
         {this.props.group.name}

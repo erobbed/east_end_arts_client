@@ -2,6 +2,7 @@ import React from 'react';
 import Group from './Group';
 import { List } from 'semantic-ui-react'
 import AddGroupModal from './AddGroupModal'
+import AddEventModal from './AddEventModal'
 
 const GroupContainer = (props) => {
 
@@ -13,6 +14,7 @@ const GroupContainer = (props) => {
           {groups}
       </List>
       <AddGroupModal/>
+      { props.selectedGroup ? <AddEventModal/> : null }
     </div>
   )
 }

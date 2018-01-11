@@ -1,8 +1,8 @@
 import React from 'react';
 import { Icon, Modal } from 'semantic-ui-react';
-import CreateGroup from './CreateGroup'
+import CreateEvent from './CreateEvent'
 
-class AddGroupModal extends React.Component{
+class AddEventModal extends React.Component{
 
   state = {
     open: false
@@ -15,11 +15,12 @@ class AddGroupModal extends React.Component{
   }
 
   render(){
+
     return(
       <div className='add'>
-        <Modal size='tiny' open={this.state.open} trigger={<button size='mini' className='addgroup' onClick={this.handleClick}>Add Group<Icon name='plus'/></button>}>
+        <Modal size='tiny' open={this.state.open} trigger={<button onClick={this.handleClick}>Add Event<Icon name='plus'/></button>}>
           <Modal.Content>
-            <CreateGroup close={this.handleClick}/>
+            <CreateEvent close={this.handleClick}/>
           </Modal.Content>
         </Modal>
       </div>
@@ -29,4 +30,4 @@ class AddGroupModal extends React.Component{
 
 //THIS SHOULD BE A HOC!!!!
 
-export default AddGroupModal
+export default AddEventModal

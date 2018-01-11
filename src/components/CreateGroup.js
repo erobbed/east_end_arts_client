@@ -12,7 +12,7 @@ class GroupForm extends React.Component{
 
   handleChange = (e) => {
     this.setState({
-      group: e.target.value
+      [e.target.id]: e.target.value
     })
   }
 
@@ -26,7 +26,7 @@ class GroupForm extends React.Component{
       <Form onSubmit={this.handleSubmit}>
         <Form.Field>
           <label>Group Name</label>
-          <Input onChange={this.handleChange}/>
+          <Input onChange={this.handleChange} id='group'/>
         </Form.Field>
         <Button type='submit'>Submit</Button>
       </Form>

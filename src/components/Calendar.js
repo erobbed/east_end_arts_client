@@ -2,7 +2,6 @@ import React from 'react';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 import Event from './Event'
-// import { Modal } from 'semantic-ui-react'
 require ('react-big-calendar/lib/css/react-big-calendar.css')
 
 
@@ -12,7 +11,8 @@ class MyCalendar extends React.Component{
 
   state={
     selectedEvent: '',
-    isOpen: false
+    isOpen: false,
+    adding: false
   }
 
   handleSelect = (event) => {
@@ -29,8 +29,11 @@ class MyCalendar extends React.Component{
     })
   }
 
+  addEvent = (event) => {
+    console.log(event);
+  }
+
   render(){
-    console.log(this.state);
     return(
       <div className='column riight' style={this.props.style}>
         {this.state.selectedEvent ? <Event open={this.state.isOpen} event={this.state.selectedEvent} close={this.handleClose}/> : null }

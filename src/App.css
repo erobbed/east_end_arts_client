@@ -1,8 +1,3 @@
-
-*{
-  font-size: 2vmin;
-}
-
 .App {
   text-align: center;
 }
@@ -38,16 +33,16 @@
 }
 
 .ui.menu:not(.vertical) .item>.button#log:hover{
-  box-shadow: 0 0 0 2px #FFF inset!important;
+  box-shadow: 0 0 0 2px black inset!important;
 }
 
-.ui.secondary.inverted.pointing.menu.main-nav{
+.ui.secondary.pointing.menu.main-nav{
   border-color: transparent;
   width: 100%
 }
 
-.ui.inverted.segment.nav{
-  background: green;
+.ui.segment.nav{
+  background: rgb(255, 253, 56);
   padding: .5em;
 }
 
@@ -69,7 +64,7 @@
 }
 
 span.rbc-toolbar-label{
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: Helvetica;
   font-size: 3vmin;
 }
 
@@ -113,6 +108,20 @@ span.rbc-toolbar-label{
     clear: both;
 }
 
-.ui.icon.button.addgroup{
-  margin: 10px;
+.addevent .addgroup{
+  display: inline-block;
+  white-space: nowrap;
+  border-radius: 4px;
+}
+
+.add{
+  margin: 10%;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list{
+  padding: 0px
+}
+
+.react-datepicker-wrapper{
+  width: auto;
 }
