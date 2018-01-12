@@ -5,7 +5,6 @@ const SignupButton = (props) => {
 
   return(
     <div>
-      <p>Not a user? Sign up!</p>
       <Button size='mini' animated='fade' color='blue' onClick={props.handleClick}>
         <Button.Content visible>Sign Up</Button.Content>
         <Button.Content hidden>

@@ -24,10 +24,10 @@ class NavBar extends React.Component{
     return(
       <Segment className="nav">
         <Menu pointing secondary className="main-nav" size="tiny">
-          <Menu.Item href={url} name="Home" key="home" />
+          <Menu.Item href={url} name="Town of Southampton" key="home" />
           <Menu.Item onClick={this.handleClick} name="Mission" key="mission" />
           <Menu.Menu className='header'>
-            <h1 className="App-title"><a href={url}>Southampton Arts and Culture Committee (SHACC)</a></h1>
+            <h1 className="App-title">Southampton Arts and Culture Committee (SHACC)</h1>
           </Menu.Menu>
           <Menu.Menu position="right" key="right">
             <Menu.Item>

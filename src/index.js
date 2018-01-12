@@ -10,8 +10,8 @@ import authReducer from './reducers/authReducer';
 import eventReducer from './reducers/eventReducer';
 import groupReducer from './reducers/groupReducer'
 import thunk from 'redux-thunk';
-import './index.css';
 import firebase from 'firebase'
+import './index.css';
 
 
 let config = {

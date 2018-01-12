@@ -29,6 +29,7 @@ class App extends Component {
   }
 
   render() {
+
     let myEventsList = (this.props.selectedGroup ? this.props.selectedGroup.events : this.props.events)
     // myEventsList = myEventsList.filter( event => event.public )
     let left = this.props.loggedIn ? {width: '15%'} : {width: '0px'}
