@@ -4,11 +4,16 @@ import { connect } from 'react-redux';
 import { currentUser } from './actions/authActions';
 import MyCalendar from './components/Calendar';
 import NavBar from './components/assets/NavBar';
+import Mission from './components/assets/Mission';
 import GroupContainer from './components/GroupContainer'
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
 
 class App extends Component {
+
+  state = {
+    mission: false
+  }
 
   componentDidMount(){
     const jwt = localStorage.getItem('jwt');
@@ -17,17 +22,24 @@ class App extends Component {
     }
   }
 
+  handleMission = () => {
+    this.setState({
+      mission: !this.state.mission
+    })
+  }
+
   render() {
     let myEventsList = (this.props.selectedGroup ? this.props.selectedGroup.events : this.props.events)
     // myEventsList = myEventsList.filter( event => event.public )
     let left = this.props.loggedIn ? {width: '15%'} : {width: '0px'}
     let right = this.props.loggedIn ? {width: '85%'} : {width: '100%', margin: '0 auto'}
-    let url = 'http://ny-southampton.civicplus.com/1054/Southampton-Arts-and-Culture-Committee-S'
+    let mission = this.state.mission ? {maxHeight: '600px', visibility: 'visible'} : {maxHeight: '0px', visibility: 'hidden'}
+
     return (
       <div className="App">
-        <NavBar/>
-        <h1 className="App-title"><a href={url}>Town of Southampton Arts and Culture Committee</a></h1>
+        <NavBar mission={this.handleMission}/>
         <br/>
+        <div className='mission' style={mission}><Mission/></div>
         <div className='page'>
           {this.props.loggedIn ? <div className='column left' style={left}><GroupContainer groups={this.props.groups} selectedGroup={this.props.selectedGroup}/></div> : <div className='column left' style={left}></div> }
           <MyCalendar myEventsList={myEventsList} style={right}/>

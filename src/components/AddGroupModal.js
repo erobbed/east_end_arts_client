@@ -14,10 +14,12 @@ class AddGroupModal extends React.Component{
     })
   }
 
+  handleClose = () => this.setState({ open: false })
+
   render(){
     return(
       <div className='add'>
-        <Modal size='tiny' open={this.state.open} trigger={<button size='mini' className='addgroup' onClick={this.handleClick}>Add Group<Icon name='plus'/></button>}>
+        <Modal size='tiny' open={this.state.open} closeIcon onClose={this.handleClose} trigger={<button size='mini' className='addgroup' onClick={this.handleClick}>Add Group<Icon name='plus'/></button>}>
           <Modal.Content>
             <CreateGroup close={this.handleClick}/>
           </Modal.Content>

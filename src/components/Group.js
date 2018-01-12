@@ -10,6 +10,8 @@ class Group extends React.Component{
     if (this.props.selectedGroup){
       if (this.props.selectedGroup.id === this.props.group.id){
         this.props.deselectGroup()
+      } else {
+        this.props.selectGroup(this.props.group)
       }
     }
     else {

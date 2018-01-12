@@ -1,39 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative');
+
+*{
+  font-size: 2vmin;
+}
+
 .App {
   text-align: center;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.menu.header{
+  margin: 0 auto !important;
+}
+
+h1{
+  top: 15px;
+  min-height: 0rem;
+  font-family: 'Cinzel Decorative', cursive;
+  font-weight: bold;
+  text-shadow: 1px 1px white !important;
+}
+
+.mission{
+  width: 90%;
+  margin: 0 auto !important;
+  padding-bottom: 2%;
+  overflow: hidden;
+  transition: max-height 1s;
 }
 
 @media (max-width: 768px) {
   h1.App-title{
-    margin: 0px;
+    margin: 0 auto;
+    font-size: 3vmin;
+    text-shadow: 1px 1px white !important;
   }
   .App-title>a{
-    font-size: .5em;
+    font-size: 3vmin;
+    color: black;
+    margin: 0 auto;
+    height: 60%;
+    font-weight: bold;
   }
 }
 
 @media (min-width: 769px) {
+  h1.App.title{
+    text-shadow: 1px 1px white !important;
+  }
+
   .App-title>a{
-    font-size: 1em;
+    font-size: 3.5vmin;
+    color: black;
+    margin: 0 auto;
   }
 }
 
-.App-intro {
-  font-size: large;
-}
-
 .ui.menu:not(.vertical) .item>.button#log{
-  top: 2px;
+
 }
 
 .ui.menu:not(.vertical) .item>.button#log:hover{
   box-shadow: 0 0 0 2px black inset!important;
+  font-weight: bold;
 }
 
 .ui.secondary.pointing.menu.main-nav{
@@ -41,9 +69,24 @@
   width: 100%
 }
 
+.ui.secondary.pointing.menu .item{
+  top: 15px
+}
+
 .ui.segment.nav{
-  background: rgb(255, 253, 56);
-  padding: .5em;
+  background-image: url('/Treaty-1.jpg');
+  background-position: center;
+  background-size: cover;
+  padding: 1.5em;
+  width: 100%;
+  border-radius: 0;
+}
+
+@media (max-width: 768px) {
+  .ui.segment.nav{
+    background-size: 175% 275%;
+    background-repeat: no-repeat;
+  }
 }
 
 .list>.item:hover{

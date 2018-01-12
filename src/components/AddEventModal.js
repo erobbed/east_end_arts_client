@@ -14,11 +14,13 @@ class AddEventModal extends React.Component{
     })
   }
 
+  handleClose = () => this.setState({ open: false })
+
   render(){
 
     return(
       <div className='add'>
-        <Modal size='tiny' open={this.state.open} trigger={<button onClick={this.handleClick}>Add Event<Icon name='plus'/></button>}>
+        <Modal size='tiny' open={this.state.open} closeIcon onClose={this.handleClose} trigger={<button onClick={this.handleClick}>Add Event<Icon name='plus'/></button>}>
           <Modal.Content>
             <CreateEvent close={this.handleClick}/>
           </Modal.Content>

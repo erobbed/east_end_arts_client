@@ -22,6 +22,7 @@ class CreateEvent extends React.Component{
 
   handleSubmit = () => {
     this.props.close()
+    this.props.createEvent(this.state, this.props.group.id)
 
   }
 

@@ -14,7 +14,7 @@ const GroupContainer = (props) => {
           {groups}
       </List>
       <AddGroupModal/>
-      { props.selectedGroup ? <AddEventModal/> : null }
+      { props.selectedGroup ? <AddEventModal group={props.selectedGroup}/> : null }
     </div>
   )
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Menu, Segment, Button } from 'semantic-ui-react';
-import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { logOut} from '../../actions/authActions'
@@ -8,28 +7,28 @@ import ModalContainer from '../Modal'
 
 class NavBar extends React.Component{
 
-  state = {
-    activeItem: 'Home'
-  }
 
   handleLogout = () => {
     this.props.logOut()
   }
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleClick = () => {
+    this.props.mission()
+  }
 
   render(){
 
-    const { activeItem } = this.state
-
-    const logout = (
-      <Button basic secondary color="black" id="log" onClick={this.handleLogout}>Log Out</Button>
-    )
+    const logout = ( <Button basic secondary color="black" id="log" onClick={this.handleLogout}>Log Out</Button> );
+    let url = 'http://ny-southampton.civicplus.com/1054/Southampton-Arts-and-Culture-Committee-S';
 
     return(
       <Segment className="nav">
         <Menu pointing secondary className="main-nav" size="tiny">
-          <Menu.Item as={NavLink} to="/" exact name="Home" active={activeItem === 'Home'} onClick={this.handleItemClick} key="home" />
+          <Menu.Item href={url} name="Home" key="home" />
+          <Menu.Item onClick={this.handleClick} name="Mission" key="mission" />
+          <Menu.Menu className='header'>
+            <h1 className="App-title"><a href={url}>Southampton Arts and Culture Committee (SHACC)</a></h1>
+          </Menu.Menu>
           <Menu.Menu position="right" key="right">
             <Menu.Item>
               {this.props.loggedIn ? logout : <ModalContainer /> }
