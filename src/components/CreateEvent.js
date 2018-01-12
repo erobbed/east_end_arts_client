@@ -15,7 +15,8 @@ class CreateEvent extends React.Component{
     startDate: moment(),
     endDate: moment(),
     details: '',
-    location: ''
+    location: '',
+    category: ''
   }
 
   handleChange = (e) => {
@@ -24,10 +25,26 @@ class CreateEvent extends React.Component{
     })
   }
 
-  handleSubmit = () => {
-    this.props.close()
-    this.props.createEvent(this.state, this.props.group.id)
+  handleSubmit = (e) => {
+    let valid = true
+    for (var prop in this.state) {
+      if (!this.state[prop]) {
+        valid = false
+        alert(`${prop} cannot be blank`)
+      }
+    }
 
+    if (valid){
+      this.props.close()
+      this.props.createEvent(this.state, this.props.group.id)
+        .then(failure => {
+  			if (failure){
+  				alert(failure)
+  			}
+  		})
+    } else {
+      e.preventDefault()
+    }
   }
 
   handleChangeStart = (date) => {
@@ -48,15 +65,25 @@ class CreateEvent extends React.Component{
     });
   }
 
+  handleSelect = (e) => {
+    this.setState({
+      category: e.target.parentElement.id
+    })
+  }
+
   render(){
     console.log(this.state);
-
+    let categories = this.props.categories.map( (cat, index) => {
+      return {key: index, text: cat, id: index + 1, value: cat}
+    })
     return(
       <Form onSubmit={this.handleSubmit}>
         <Form.Field>
           <Form.Field control={Input} label='Event Title' onChange={this.handleChange} id='title'/>
           <label>Location</label>
           <Geosuggest highlightMatch onSuggestSelect={this.setLocation}/>
+          <label>Category</label>
+          <Form.Dropdown placeholder='Select Category' options={categories} onChange={this.handleSelect} id='category'/>
           <label>Details</label>
           <Form.TextArea onChange={this.handleChange} id='details'/>
           <label>Start Date & Time</label>
@@ -95,4 +122,8 @@ function mapDispatchToProps(dispatch){
   return bindActionCreators({createEvent}, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(CreateEvent)
+function mapStateToProps(state){
+  return {categories: state.events.categories}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateEvent)

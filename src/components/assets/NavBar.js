@@ -26,9 +26,9 @@ class NavBar extends React.Component{
         <Menu pointing secondary className="main-nav" size="tiny">
           <Menu.Item href={url} name="Town of Southampton" key="home" />
           <Menu.Item onClick={this.handleClick} name="Mission" key="mission" />
-          <Menu.Menu className='header'>
+          <Menu.Item className='header'>
             <h1 className="App-title">Southampton Arts and Culture Committee (SHACC)</h1>
-          </Menu.Menu>
+          </Menu.Item>
           <Menu.Menu position="right" key="right">
             <Menu.Item>
               {this.props.loggedIn ? logout : <ModalContainer /> }

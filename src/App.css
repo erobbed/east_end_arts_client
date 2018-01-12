@@ -8,20 +8,20 @@
   text-align: center;
 }
 
-.menu.header{
-  margin: 0 auto !important;
-}
-
 .ui.secondary.pointing.menu a.item:hover{
   text-decoration: underline;
 }
 
+.ui.secondary.pointing.menu .header.item{
+  margin: 0 auto
+}
+
 h1{
-  top: 15px;
   min-height: 0rem;
   font-family: 'Cinzel Decorative', cursive;
   font-weight: bold;
   text-shadow: 1px 1px white !important;
+  margin: 0 auto !important;
 }
 
 .mission{
@@ -36,15 +36,28 @@ h1{
 @media (max-width: 768px) {
   h1.App-title{
     margin: 0 auto;
-    font-size: 3vmin;
+    font-size: 2.5vmin;
     text-shadow: 1px 1px white !important;
   }
   .App-title{
     font-size: 3vmin;
     color: black;
-    margin: 0 auto;
-    height: 60%;
+    height: 50%;
     font-weight: bold;
+  }
+
+  .ui.secondary.pointing.menu .item{
+    top: 5px;
+  }
+
+  .header.item{
+    margin: 0 auto;
+    width: 40%
+  }
+
+  p{
+    font-size: .75em;
+    margin: 0;
   }
 }
 
@@ -57,6 +70,10 @@ h1{
     font-size: 3.5vmin;
     color: black;
     margin: 0 auto;
+  }
+
+  .ui.secondary.pointing.menu .item{
+    top: 4em
   }
 }
 
@@ -74,10 +91,6 @@ h1{
   width: 100%
 }
 
-.ui.secondary.pointing.menu .item{
-  top: 15px
-}
-
 .ui.segment.nav{
   background-image: url('/Treaty-1.jpg');
   background-position: center;
@@ -85,6 +98,7 @@ h1{
   padding: 1.5em;
   width: 100%;
   border-radius: 0;
+  height: 20vmin;
 }
 
 @media (max-width: 768px) {
@@ -106,10 +120,19 @@ h1{
 }
 
 .rbc-calendar{
-  margin: 0 auto;
+  margin: auto;
   height: 50em;
   width: 90%;
   height: 40em;
+  padding: 1%
+}
+
+.footer{
+  width: 88%;
+  background-color: rgb(255,253,56);
+  height: 4em;
+  margin: 0 auto;
+  margin-bottom: 3%;
 }
 
 span.rbc-toolbar-label{

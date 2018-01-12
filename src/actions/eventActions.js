@@ -5,7 +5,18 @@ export function createEvent(state, groupID){
       'content-type': 'application/json',
       'accept': 'application/json'
     },
-    body: JSON.stringify({event: {title: state.title, date: state.date }, group: groupID})
+    body: JSON.stringify({
+      event: {
+        title: state.title,
+        start_date: state.startDate,
+        end_date: state.endDate,
+        details: state.details,
+        lat: state.location.location.lat,
+        long: state.location.location.lng,
+        categoryID: state.category
+      },
+      group: groupID
+    })
   }
 
   return (dispatch) => {

@@ -35,11 +35,11 @@ class App extends Component {
     let left = this.props.loggedIn ? {width: '15%'} : {width: '0px'}
     let right = this.props.loggedIn ? {width: '85%'} : {width: '100%', margin: '0 auto'}
     let mission = this.state.mission ? {maxHeight: '600px', visibility: 'visible'} : {maxHeight: '0px', visibility: 'hidden'}
-
+    console.log(this.props.selectedGroup);
+    
     return (
       <div className="App">
         <NavBar mission={this.handleMission}/>
-        <br/>
         <div className='mission' style={mission}><Mission/></div>
         <div className='page'>
           {this.props.loggedIn ? <div className='column left' style={left}><GroupContainer groups={this.props.groups} selectedGroup={this.props.selectedGroup}/></div> : <div className='column left' style={left}></div> }
@@ -55,7 +55,6 @@ function mapDispatchToProps(dispatch){
 }
 
 function mapStateToProps(state){
-  console.log(state);
   return {loggedIn: state.auth.loggedIn, user: state.auth.user, groups: state.groups.groups, selectedGroup: state.groups.selectedGroup, events: state.events.all}
 }
 
