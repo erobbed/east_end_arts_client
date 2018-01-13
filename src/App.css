@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300');
 
 *{
   font-size: 2vmin;
@@ -16,10 +17,9 @@
   margin: 0 auto
 }
 
-h1{
+h1:last-child{
   min-height: 0rem;
-  font-family: 'Cinzel Decorative', cursive;
-  font-weight: bold;
+  font-family: 'Alegreya Sans SC', sans-serif !important;
   text-shadow: 1px 1px white !important;
   margin: 0 auto !important;
 }
@@ -38,6 +38,7 @@ h1{
     margin: 0 auto;
     font-size: 2.5vmin;
     text-shadow: 1px 1px white !important;
+    font-family: 'Alegreya Sans SC', sans-serif !important;
   }
   .App-title{
     font-size: 3vmin;
@@ -46,8 +47,9 @@ h1{
     font-weight: bold;
   }
 
-  .ui.secondary.pointing.menu .item{
+  .ui.secondary.pointing.menu a.item{
     top: 5px;
+    font-family: 'Roboto Condensed', sans-serif !important;
   }
 
   .header.item{
@@ -64,26 +66,30 @@ h1{
 @media (min-width: 769px) {
   h1.App.title{
     text-shadow: 1px 1px white !important;
+    font-family: 'Alegreya Sans SC', sans-serif !important;
   }
 
   .App-title{
-    font-size: 3.5vmin;
+    font-size: 4vmin;
     color: black;
     margin: 0 auto;
   }
 
   .ui.secondary.pointing.menu .item{
-    top: 4em
+    top: 4em;
+    font-family: 'Roboto Condensed', sans-serif !important;
   }
 }
 
 .ui.menu:not(.vertical) .item>.button#log{
-
+  font-size: 1.5vmin;
+  font-weight: bold;
 }
 
 .ui.menu:not(.vertical) .item>.button#log:hover{
   box-shadow: 0 0 0 2px black inset!important;
   font-weight: bold;
+  text-shadow: 1px 1px white !important;
 }
 
 .ui.secondary.pointing.menu.main-nav{
