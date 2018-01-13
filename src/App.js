@@ -30,13 +30,12 @@ class App extends Component {
 
   render() {
 
-    let myEventsList = (this.props.selectedGroup ? this.props.selectedGroup.events : this.props.events)
+    let myEventsList = (this.props.selectedGroup ? this.props.events.filter(event => event.group_id === this.props.selectedGroup.id ) : this.props.events.filter( event => event.public ) )
     // myEventsList = myEventsList.filter( event => event.public )
     let left = this.props.loggedIn ? {width: '15%'} : {width: '0px'}
     let right = this.props.loggedIn ? {width: '85%'} : {width: '100%', margin: '0 auto'}
     let mission = this.state.mission ? {maxHeight: '600px', visibility: 'visible'} : {maxHeight: '0px', visibility: 'hidden'}
-    console.log(this.props.selectedGroup);
-    
+
     return (
       <div className="App">
         <NavBar mission={this.handleMission}/>

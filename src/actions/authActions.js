@@ -32,6 +32,12 @@ export function signup(input){
               groups: res.groups
             }
           })
+
+          dispatch({type: 'SET_EVENTS', payload: {
+              events: res.events
+            }
+          })
+
         } else {
           return res.failure
         }
@@ -72,6 +78,12 @@ export function login(input){
               groups: res.groups
             }
           })
+
+          dispatch({type: 'SET_EVENTS', payload: {
+              events: res.events
+            }
+          })
+
         } else {
           return res.failure
         }
@@ -100,6 +112,11 @@ export function currentUser(jwt){
 
       dispatch({type: "SET_GROUPS", payload: {
           groups: res.groups
+        }
+      })
+
+      dispatch({type: 'SET_EVENTS', payload: {
+          events: res.events
         }
       })
     }

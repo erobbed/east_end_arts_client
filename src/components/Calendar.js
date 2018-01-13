@@ -29,10 +29,6 @@ class MyCalendar extends React.Component{
     })
   }
 
-  addEvent = (event) => {
-    console.log(event);
-  }
-
   render(){
     return(
       <div className='column riight' style={this.props.style}>

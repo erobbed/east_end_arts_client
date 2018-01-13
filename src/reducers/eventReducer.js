@@ -13,7 +13,8 @@ function eventReducer(state =
   }, action){
   switch (action.type) {
     case "SET_EVENTS":
-      return Object.assign({}, state, {all: action.payload.events})
+      let events = action.payload.events.map( event => Object.assign({}, event, {startDate: new Date(event.start_date), endDate: new Date(event.end_date)}))
+      return Object.assign({}, state, {all: events})
     default:
       return state
   }

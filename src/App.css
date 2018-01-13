@@ -271,3 +271,7 @@ span.rbc-toolbar-label{
 .geosuggest__item__matched-text {
   font-weight: bold;
 }
+
+.ui.button.toggle{
+  float: right;
+}
