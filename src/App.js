@@ -36,7 +36,6 @@ class App extends Component {
     let right = this.props.loggedIn ? {width: '85%'} : {width: '100%', margin: '0 auto'}
     let mission = this.state.mission ? {maxHeight: '600px', visibility: 'visible'} : {maxHeight: '0px', visibility: 'hidden'}
 
-    console.log(process.env);
     return (
       <div className="App">
         <NavBar mission={this.handleMission}/>
