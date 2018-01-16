@@ -6,7 +6,12 @@ import AddEventModal from './AddEventModal'
 
 const GroupContainer = (props) => {
 
-  let groups = props.groups.map( group => <Group group={group} key={group.id} selectedGroup={props.selectedGroup}/> )
+  let sortable = (a ,b) => {
+    let newA = (a.name.split(' ')[0] === 'The' ? a.name.split(' ')[1] : a.name.split(' ')[0])
+    let newB = (b.name.split(' ')[0] === 'The' ? b.name.split(' ')[1] : b.name.split(' ')[0])
+    return newA < newB ? -1 : newA > newB ? 1: 0
+  }
+  let groups = props.groups.sort( (a, b) => sortable(a, b) ).map( group => <Group group={group} key={group.id} selectedGroup={props.selectedGroup}/> )
 
   return(
     <div className='column left'>
