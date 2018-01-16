@@ -138,7 +138,7 @@ h1:last-child{
   background-color: rgb(255,253,56);
   height: 4em;
   margin: 0 auto;
-  margin-bottom: 3%;
+  margin-bottom: 2%;
 }
 
 span.rbc-toolbar-label{
@@ -280,4 +280,9 @@ span.rbc-toolbar-label{
 
 .ui.button.toggle{
   float: right;
+}
+
+.ui.card.event{
+  width: 100%;
+  margin: 0 auto;
 }

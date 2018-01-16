@@ -8,11 +8,10 @@ export function createEvent(state, groupID){
     body: JSON.stringify({
       event: {
         title: state.title,
-        start_date: state.startDate,
-        end_date: state.endDate,
+        start_date: state.startDate._d,
+        end_date: state.endDate._d,
         details: state.details,
-        lat: state.location.location.lat,
-        long: state.location.location.lng,
+        location: state.location.placeId,
         categoryID: state.category
       },
       group: groupID

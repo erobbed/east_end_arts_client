@@ -30,6 +30,7 @@ class MyCalendar extends React.Component{
   }
 
   render(){
+    console.log(this.props.myEventsList);
     return(
       <div className='column riight' style={this.props.style}>
         {this.state.selectedEvent ? <Event open={this.state.isOpen} event={this.state.selectedEvent} close={this.handleClose}/> : null }
