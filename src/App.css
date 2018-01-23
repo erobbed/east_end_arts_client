@@ -289,3 +289,16 @@ span.rbc-toolbar-label {
   width: 100%;
   margin: 0 auto;
 }
+
+.filter {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.ui.checkbox {
+  margin: 1%;
+}
+
+.ui.checkbox input.hidden + label {
+  font-size: 2vmin;
+}

@@ -33,7 +33,6 @@ class App extends Component {
           event => event.group_id === this.props.selectedGroup.id
         )
       : this.props.events.filter(event => event.public);
-    console.log(myEventsList);
 
     let left = this.props.loggedIn ? { width: "15%" } : { width: "0px" };
     let right = this.props.loggedIn
