@@ -1,9 +1,9 @@
-export function createEvent(state, groupID){
+export function createEvent(state, groupID) {
   const body = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'content-type': 'application/json',
-      'accept': 'application/json'
+      "content-type": "application/json",
+      accept: "application/json"
     },
     body: JSON.stringify({
       event: {
@@ -16,47 +16,50 @@ export function createEvent(state, groupID){
       },
       group: groupID
     })
-  }
+  };
 
-  return (dispatch) => {
+  return dispatch => {
     return fetch(`${process.env.REACT_APP_RAILS_URL}/events`, body)
-      .then ( res => res.json() )
-      .then( res => {
+      .then(res => res.json())
+      .then(res => {
         if (res.success) {
-          dispatch({type: 'SET_EVENTS', payload: {
+          dispatch({
+            type: "SET_EVENTS",
+            payload: {
               events: res.events
             }
-          })
+          });
         } else {
-          return res.failure
+          return res.failure;
         }
-      }
-    )
-  }
+      });
+  };
 }
 
-export function publish(eventId){
+export function publish(eventId) {
   const body = {
-    method: 'PATCH',
+    method: "PATCH",
     headers: {
-      'content-type': 'application/json',
-      'accept': 'application/json'
+      "content-type": "application/json",
+      accept: "application/json"
     },
-    body: JSON.stringify({event: eventId})
-  }
+    body: JSON.stringify({ event: eventId })
+  };
 
-  return (dispatch) => {
+  return dispatch => {
     return fetch(`${process.env.REACT_APP_RAILS_URL}/events/${eventId}`, body)
-      .then( res => res.json() )
-      .then( res => {
+      .then(res => res.json())
+      .then(res => {
         if (res.success) {
-        dispatch({type: 'SET_EVENTS', payload: {
-            events: res.events
-          }
-        })
-      } else {
-        return res.failure
-      }
-    })
-  }
+          dispatch({
+            type: "SET_EVENTS",
+            payload: {
+              events: res.events
+            }
+          });
+        } else {
+          return res.failure;
+        }
+      });
+  };
 }

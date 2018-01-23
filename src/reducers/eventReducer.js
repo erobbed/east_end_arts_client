@@ -1,25 +1,32 @@
-import moment from 'moment';
+import moment from "moment";
 
-function eventReducer(state =
-  {
+function eventReducer(
+  state = {
     all: [],
     categories: [
-      'Art Exhibit',
-      'Music',
-      'Theatre',
-      'Performance',
-      'Readings',
-      'Book Signing',
-      'Children’s Program'
+      "Art Exhibit",
+      "Music",
+      "Theatre",
+      "Performance",
+      "Readings",
+      "Book Signing",
+      "Children’s Program"
     ]
-  }, action){
+  },
+  action
+) {
   switch (action.type) {
     case "SET_EVENTS":
-      let events = action.payload.events.map( event => Object.assign({}, event, {startDate: moment(event.start_date), endDate: moment(event.end_date)}))
-      return Object.assign({}, state, {all: events})
+      let events = action.payload.events.map(event =>
+        Object.assign({}, event, {
+          startDate: moment(event.start_date),
+          endDate: moment(event.end_date)
+        })
+      );
+      return Object.assign({}, state, { all: events });
     default:
-      return state
+      return state;
   }
 }
 
-export default eventReducer
+export default eventReducer;

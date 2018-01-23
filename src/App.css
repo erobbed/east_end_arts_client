@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
-@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300');
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
+@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300");
 
-*{
+* {
   font-size: 2vmin;
 }
 
@@ -9,96 +9,96 @@
   text-align: center;
 }
 
-.ui.secondary.pointing.menu a.item:hover{
+.ui.secondary.pointing.menu a.item:hover {
   text-decoration: underline;
 }
 
-.ui.secondary.pointing.menu .header.item{
-  margin: 0 auto
+.ui.secondary.pointing.menu .header.item {
+  margin: 0 auto;
 }
 
-h1:last-child{
+h1:last-child {
   min-height: 0rem;
-  font-family: 'Alegreya Sans SC', sans-serif !important;
+  font-family: "Alegreya Sans SC", sans-serif !important;
   text-shadow: 1px 1px white !important;
   margin: 0 auto !important;
 }
 
-.mission{
+.mission {
   width: 90%;
   margin: 0 auto !important;
   padding-bottom: 2%;
   overflow: hidden;
   transition: max-height 1s;
-  text-align: left;
+  text-align: justify;
 }
 
 @media (max-width: 768px) {
-  h1.App-title{
+  h1.App-title {
     margin: 0 auto;
     font-size: 2.5vmin;
     text-shadow: 1px 1px white !important;
-    font-family: 'Alegreya Sans SC', sans-serif !important;
+    font-family: "Alegreya Sans SC", sans-serif !important;
   }
-  .App-title{
+  .App-title {
     font-size: 3vmin;
     color: black;
     height: 50%;
     font-weight: bold;
   }
 
-  .ui.secondary.pointing.menu a.item{
+  .ui.secondary.pointing.menu a.item {
     top: 5px;
-    font-family: 'Roboto Condensed', sans-serif !important;
+    font-family: "Roboto Condensed", sans-serif !important;
   }
 
-  .header.item{
+  .header.item {
     margin: 0 auto;
-    width: 40%
+    width: 40%;
   }
 
-  p{
-    font-size: .75em;
+  p {
+    font-size: 0.75em;
     margin: 0;
   }
 }
 
 @media (min-width: 769px) {
-  h1.App.title{
+  h1.App.title {
     text-shadow: 1px 1px white !important;
-    font-family: 'Alegreya Sans SC', sans-serif !important;
+    font-family: "Alegreya Sans SC", sans-serif !important;
   }
 
-  .App-title{
+  .App-title {
     font-size: 4vmin;
     color: black;
     margin: 0 auto;
   }
 
-  .ui.secondary.pointing.menu .item{
+  .ui.secondary.pointing.menu .item {
     top: 4em;
-    font-family: 'Roboto Condensed', sans-serif !important;
+    font-family: "Roboto Condensed", sans-serif !important;
   }
 }
 
-.ui.menu:not(.vertical) .item>.button#log{
+.ui.menu:not(.vertical) .item > .button#log {
   font-size: 1.5vmin;
   font-weight: bold;
 }
 
-.ui.menu:not(.vertical) .item>.button#log:hover{
-  box-shadow: 0 0 0 2px black inset!important;
+.ui.menu:not(.vertical) .item > .button#log:hover {
+  box-shadow: 0 0 0 2px black inset !important;
   font-weight: bold;
   text-shadow: 1px 1px white !important;
 }
 
-.ui.secondary.pointing.menu.main-nav{
+.ui.secondary.pointing.menu.main-nav {
   border-color: transparent;
-  width: 100%
+  width: 100%;
 }
 
-.ui.segment.nav{
-  background-image: url('/Treaty-1.jpg');
+.ui.segment.nav {
+  background-image: url("/Treaty-1.jpg");
   background-position: center;
   background-size: cover;
   padding: 1.5em;
@@ -108,103 +108,106 @@ h1:last-child{
 }
 
 @media (max-width: 768px) {
-  .ui.segment.nav{
+  .ui.segment.nav {
     background-size: 175% 275%;
     background-repeat: no-repeat;
   }
 }
 
-.list>.item:hover{
+.list > .item:hover {
   color: green;
   cursor: pointer;
 }
 
-.list>.item{
+.list > .item {
   padding: 2%;
   margin: 0 auto;
   font-size: 90%;
 }
 
-.rbc-calendar{
+.rbc-calendar {
   margin: auto;
   height: 50em;
   width: 90%;
   height: 40em;
-  padding: 1%
+  padding: 1%;
 }
 
-.footer{
+.footer {
   width: 88%;
-  background-color: rgb(255,253,56);
+  background-color: rgb(255, 253, 56);
   height: 4em;
   margin: 0 auto;
   margin-bottom: 2%;
 }
 
-span.rbc-toolbar-label{
+span.rbc-toolbar-label {
   font-family: Helvetica;
   font-size: 3vmin;
 }
 
 @media (max-width: 768px) {
-  div.rbc-toolbar>span.rbc-btn-group>button{
-    padding:2px 4px;
-    font-size:80%;
+  div.rbc-toolbar > span.rbc-btn-group > button {
+    padding: 2px 4px;
+    font-size: 80%;
     line-height: 1;
   }
 }
 
-.ui.list.groups{
+.ui.list.groups {
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 
-.left{
+.left {
   float: left;
   -webkit-transition: left 2s, ease-out width 2s;
-    transition: left 2s, ease-out width 2s;
-    overflow: hidden;
-    font-size: 1em;
-    direction: rtl
+  transition: left 2s, ease-out width 2s;
+  overflow: hidden;
+  font-size: 1em;
+  direction: rtl;
 }
 
-.riight{
+.riight {
   float: right;
   -webkit-transition: right 2s, width 2s;
-    transition: right 2s, width 2s;
-    direction: ltr;
+  transition: right 2s, width 2s;
+  direction: ltr;
 }
 
-.page{
+.page {
   width: 95%;
   margin: 0 auto;
 }
 
 .page:after {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.addevent .addgroup{
+.addevent .addgroup {
   display: inline-block;
   white-space: nowrap;
   border-radius: 4px;
 }
 
-.add{
+.add {
   margin: 10%;
 }
 
-.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list{
-  padding: 0px
+.react-datepicker__time-container
+  .react-datepicker__time
+  .react-datepicker__time-box
+  ul.react-datepicker__time-list {
+  padding: 0px;
 }
 
-.react-datepicker-wrapper{
+.react-datepicker-wrapper {
   width: auto;
 }
 
-.react-datepicker__input-container{
+.react-datepicker__input-container {
   margin-bottom: 1em;
 }
 
@@ -219,9 +222,9 @@ span.rbc-toolbar-label{
   width: 100%;
   border: 2px solid transparent;
   box-shadow: 0 0 1px #3d464d;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   -webkit-transition: border 0.2s, box-shadow 0.2s;
-          transition: border 0.2s, box-shadow 0.2s;
+  transition: border 0.2s, box-shadow 0.2s;
 }
 .geosuggest__input:focus {
   border-color: #267dc0;
@@ -238,14 +241,14 @@ span.rbc-toolbar-label{
   background: #fff;
   border: 2px solid #267dc0;
   border-top-width: 0;
-  border-bottom-right-radius: .5rem;
-  border-bottom-left-radius: .5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
   overflow-x: hidden;
   overflow-y: auto;
   list-style: none;
   z-index: 5;
   -webkit-transition: max-height 0.2s, border 0.2s;
-          transition: max-height 0.2s, border 0.2s;
+  transition: max-height 0.2s, border 0.2s;
 }
 .geosuggest__suggests--hidden {
   max-height: 0;
@@ -259,7 +262,7 @@ span.rbc-toolbar-label{
 .geosuggest__item {
   font-size: 18px;
   font-size: 1rem;
-  padding: .5em .65em;
+  padding: 0.5em 0.65em;
   cursor: pointer;
 }
 .geosuggest__item:hover,
@@ -278,11 +281,11 @@ span.rbc-toolbar-label{
   font-weight: bold;
 }
 
-.ui.button.toggle{
+.ui.button.toggle {
   float: right;
 }
 
-.ui.card.event{
+.ui.card.event {
   width: 100%;
   margin: 0 auto;
 }

@@ -1,134 +1,150 @@
-export function signup(input){
+export function signup(input) {
   let user = {
     user: {
       username: input.username,
       email: input.email,
       password: input.password
     }
-  }
+  };
 
   const body = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'content-type': 'application/json',
-      'accept': 'application/json'
+      "content-type": "application/json",
+      accept: "application/json"
     },
     body: JSON.stringify(user)
-  }
+  };
 
-  return (dispatch) => {
+  return dispatch => {
     return fetch(`${process.env.REACT_APP_RAILS_URL}/users`, body)
       .then(res => res.json())
       .then(res => {
         if (res.success) {
-          dispatch({type: "LOG_IN", payload: {
+          dispatch({
+            type: "LOG_IN",
+            payload: {
               user: res.user,
               jwt: res.jwt,
-              id: res.user.id,
+              id: res.user.id
             }
-          })
+          });
 
-          dispatch({type: "SET_GROUPS", payload: {
+          dispatch({
+            type: "SET_GROUPS",
+            payload: {
               groups: res.groups
             }
-          })
+          });
 
-          dispatch({type: 'SET_EVENTS', payload: {
+          dispatch({
+            type: "SET_EVENTS",
+            payload: {
               events: res.events
             }
-          })
-
+          });
         } else {
-          return res.failure
+          return res.failure;
         }
-      }
-  )}
+      });
+  };
 }
 
-export function login(input){
+export function login(input) {
   let user = {
     user: {
       username: input.username,
       password: input.password
     }
-  }
+  };
 
   const body = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'content-type': 'application/json',
-      'accept': 'application/json'
+      "content-type": "application/json",
+      accept: "application/json"
     },
     body: JSON.stringify(user)
-  }
+  };
 
-  return (dispatch) => {
+  return dispatch => {
     return fetch(`${process.env.REACT_APP_RAILS_URL}/login`, body)
       .then(res => res.json())
       .then(res => {
-        if (res.success){
-          dispatch({type: "LOG_IN", payload: {
+        if (res.success) {
+          dispatch({
+            type: "LOG_IN",
+            payload: {
               user: res.user,
               jwt: res.jwt,
-              id: res.user.id,
+              id: res.user.id
             }
-          })
+          });
 
-          dispatch({type: "SET_GROUPS", payload: {
+          dispatch({
+            type: "SET_GROUPS",
+            payload: {
               groups: res.groups
             }
-          })
+          });
 
-          dispatch({type: 'SET_EVENTS', payload: {
+          dispatch({
+            type: "SET_EVENTS",
+            payload: {
               events: res.events
             }
-          })
-
+          });
         } else {
-          return res.failure
+          return res.failure;
         }
-      }
-  )}
+      });
+  };
 }
 
-export function currentUser(jwt){
+export function currentUser(jwt) {
   const body = {
     headers: {
-      "Authorization":`Bearer ${jwt}`,
-      "Content-Type":"application/json",
-      "Accept":"application/json"
+      Authorization: `Bearer ${jwt}`,
+      "Content-Type": "application/json",
+      Accept: "application/json"
     }
-  }
-  return (dispatch) => {
+  };
+  return dispatch => {
     return fetch(`${process.env.REACT_APP_RAILS_URL}/me`, body)
-    .then(res => res.json())
-    .then(res => {
-        dispatch({type: "LOG_IN", payload: {
-          user: res.user,
-          jwt: jwt,
-          id: res.user.id,
-        }
-      })
+      .then(res => res.json())
+      .then(res => {
+        dispatch({
+          type: "LOG_IN",
+          payload: {
+            user: res.user,
+            jwt: jwt,
+            id: res.user.id
+          }
+        });
 
-      dispatch({type: "SET_GROUPS", payload: {
-          groups: res.groups
-        }
-      })
+        dispatch({
+          type: "SET_GROUPS",
+          payload: {
+            groups: res.groups
+          }
+        });
 
-      dispatch({type: 'SET_EVENTS', payload: {
-          events: res.events
-        }
-      })
-    }
-  )}
+        dispatch({
+          type: "SET_EVENTS",
+          payload: {
+            events: res.events
+          }
+        });
+      });
+  };
 }
 
-export function logOut(){
+export function logOut() {
   return {
     type: "LOG_OUT",
     payload: {
-      user: '',
+      user: "",
       groups: []
     }
-  }
+  };
 }
