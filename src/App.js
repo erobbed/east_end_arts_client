@@ -6,12 +6,24 @@ import MyCalendar from "./components/Calendar";
 import NavBar from "./components/assets/NavBar";
 import Mission from "./components/assets/Mission";
 import GroupContainer from "./components/GroupContainer";
+import Filter from "./components/Filter";
 import "./App.css";
 import "semantic-ui-css/semantic.min.css";
 
+const WithFilter = Filter(MyCalendar);
+
 class App extends Component {
   state = {
-    mission: false
+    mission: false,
+    categories: [
+      { id: 1, name: "Art Exhibit" },
+      { id: 2, name: "Music" },
+      { id: 3, name: "Theatre" },
+      { id: 4, name: "Performance" },
+      { id: 5, name: "Readings" },
+      { id: 6, name: "Book Signing" },
+      { id: 7, name: "Children's Program" }
+    ]
   };
 
   componentDidMount() {
@@ -59,7 +71,11 @@ class App extends Component {
           ) : (
             <div className="column left" style={left} />
           )}
-          <MyCalendar myEventsList={myEventsList} style={right} />
+          <WithFilter
+            categories={this.state.categories}
+            myEventsList={myEventsList}
+            style={right}
+          />
         </div>
       </div>
     );
