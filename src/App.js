@@ -57,8 +57,6 @@ class App extends Component {
       ? { maxHeight: "600px", visibility: "visible" }
       : { maxHeight: "0px", visibility: "hidden" };
 
-    console.log(this.props.events);
-
     return (
       <div className="App">
         <NavBar mission={this.handleMission} />

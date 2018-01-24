@@ -21,7 +21,19 @@ class Event extends React.Component {
   };
 
   render() {
-    console.log(this.props.event);
+    const admin =
+      this.props.user &&
+      this.props.selectedGroup &&
+      this.props.selectedGroup.members
+        .filter(mem => mem.group_admin)
+        .map(mem => mem.user_id)
+        .includes(this.props.user.id) ? (
+        <PublishButton
+          public={this.props.event.public}
+          publish={this.publish}
+        />
+      ) : null;
+
     return (
       <Modal
         size="tiny"
@@ -31,10 +43,7 @@ class Event extends React.Component {
       >
         <Modal.Header>
           {this.props.event.title}
-          <PublishButton
-            public={this.props.event.public}
-            publish={this.publish}
-          />
+          {admin}
         </Modal.Header>
         <Modal.Content>
           <Card className="event">
@@ -62,7 +71,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
-  return { user: state.auth.user };
+  return { user: state.auth.user, selectedGroup: state.groups.selectedGroup };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Event);
