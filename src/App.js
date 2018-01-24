@@ -6,7 +6,7 @@ import MyCalendar from "./components/Calendar";
 import NavBar from "./components/assets/NavBar";
 import Mission from "./components/assets/Mission";
 import GroupContainer from "./components/GroupContainer";
-import Filter from "./components/Filter";
+import Filter from "./components/hocs/Filter";
 import "./App.css";
 import "semantic-ui-css/semantic.min.css";
 
