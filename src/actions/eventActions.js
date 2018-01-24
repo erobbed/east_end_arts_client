@@ -63,3 +63,22 @@ export function publish(eventId) {
       });
   };
 }
+
+export function getEvents() {
+  return dispatch => {
+    return fetch(`${process.env.REACT_APP_RAILS_URL}/events`)
+      .then(res => res.json())
+      .then(res => {
+        if (res.success) {
+          dispatch({
+            type: "SET_EVENTS",
+            payload: {
+              events: res.events
+            }
+          });
+        } else {
+          return res.failure;
+        }
+      });
+  };
+}

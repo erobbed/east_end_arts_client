@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { currentUser } from "./actions/authActions";
+import { getEvents } from "./actions/eventActions";
 import MyCalendar from "./components/Calendar";
 import NavBar from "./components/assets/NavBar";
 import Mission from "./components/assets/Mission";
@@ -30,6 +31,8 @@ class App extends Component {
     const jwt = localStorage.getItem("jwt");
     if (jwt) {
       return this.props.currentUser(jwt);
+    } else {
+      this.props.getEvents();
     }
   }
 
@@ -53,6 +56,8 @@ class App extends Component {
     let mission = this.state.mission
       ? { maxHeight: "600px", visibility: "visible" }
       : { maxHeight: "0px", visibility: "hidden" };
+
+    console.log(this.props.events);
 
     return (
       <div className="App">
@@ -83,7 +88,7 @@ class App extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ currentUser }, dispatch);
+  return bindActionCreators({ currentUser, getEvents }, dispatch);
 }
 
 function mapStateToProps(state) {
