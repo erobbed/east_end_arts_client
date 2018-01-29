@@ -3,6 +3,7 @@ import { Menu, Segment, Button } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { logOut } from "../../actions/authActions";
+import { Route } from "react-router";
 import ModalContainer from "../Modal";
 
 class NavBar extends React.Component {
@@ -41,7 +42,15 @@ class NavBar extends React.Component {
           </Menu.Item>
           <Menu.Menu position="right" key="right">
             <Menu.Item>
-              {this.props.loggedIn ? logout : <ModalContainer />}
+              {this.props.loggedIn ? (
+                logout
+              ) : (
+                <Route
+                  path="/919ddbbc6483b8b243d0592f5432a2fd/login"
+                  //md5 of shacc-approved
+                  component={ModalContainer}
+                />
+              )}
             </Menu.Item>
           </Menu.Menu>
         </Menu>

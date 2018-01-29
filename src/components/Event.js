@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { publish } from "../actions/eventActions";
 import PublishButton from "./PublishButton";
 import MapContainer from "./Map";
+import moment from "moment";
 
 class Event extends React.Component {
   state = {
@@ -22,12 +23,13 @@ class Event extends React.Component {
 
   render() {
     const admin =
-      this.props.user &&
-      this.props.selectedGroup &&
-      this.props.selectedGroup.members
-        .filter(mem => mem.group_admin)
-        .map(mem => mem.user_id)
-        .includes(this.props.user.id) ? (
+      (this.props.user &&
+        this.props.selectedGroup &&
+        this.props.selectedGroup.members
+          .filter(mem => mem.group_admin)
+          .map(mem => mem.user_id)
+          .includes(this.props.user.id)) ||
+      this.props.user.admin ? (
         <PublishButton
           public={this.props.event.public}
           publish={this.publish}
@@ -50,9 +52,13 @@ class Event extends React.Component {
             <Card.Content>
               <Card.Description>{this.props.event.details}</Card.Description>
               <Card.Meta>
-                {this.props.event.startDate.format("MMMM Do YYYY, h:mm a")} to{" "}
+                {moment(this.props.event.startDate).format(
+                  "MMMM Do YYYY, h:mm a"
+                )}
                 <br />
-                {this.props.event.endDate.format("MMMM Do YYYY, h:mm a")}
+                {moment(this.props.event.endDate).format(
+                  "MMMM Do YYYY, h:mm a"
+                )}
               </Card.Meta>
             </Card.Content>
             <Card.Content extra>

@@ -46,6 +46,7 @@ class MyCalendar extends React.Component {
           startAccessor="startDate"
           endAccessor="endDate"
           onSelectEvent={this.handleSelect}
+          views={["month", "week"]}
         />
         <div className="footer" />
       </div>

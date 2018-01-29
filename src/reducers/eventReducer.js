@@ -1,5 +1,3 @@
-import moment from "moment";
-
 function eventReducer(
   state = {
     all: [],
@@ -19,8 +17,8 @@ function eventReducer(
     case "SET_EVENTS":
       let events = action.payload.events.map(event =>
         Object.assign({}, event, {
-          startDate: moment(event.start_date),
-          endDate: moment(event.end_date)
+          startDate: new Date(event.start_date),
+          endDate: new Date(event.end_date)
         })
       );
       return Object.assign({}, state, { all: events });
