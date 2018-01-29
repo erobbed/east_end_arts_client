@@ -147,7 +147,7 @@ h1:last-child {
 }
 
 span.rbc-toolbar-label {
-  font-family: Helvetica;
+  font-family: "OratorStd";
   font-size: 3vmin;
 }
 
@@ -157,6 +157,11 @@ span.rbc-toolbar-label {
     font-size: 80%;
     line-height: 1;
   }
+}
+
+.rbc-header,
+.rbc-btn-group > button {
+  font-family: "OratorStd";
 }
 
 .ui.list.groups {
