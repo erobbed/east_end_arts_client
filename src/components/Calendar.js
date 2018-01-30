@@ -2,6 +2,7 @@ import React from "react";
 import BigCalendar from "react-big-calendar";
 import moment from "moment";
 import Event from "./Event";
+import Footer from "./Footer";
 
 require("react-big-calendar/lib/css/react-big-calendar.css");
 
@@ -48,7 +49,7 @@ class MyCalendar extends React.Component {
           onSelectEvent={this.handleSelect}
           views={["month", "week"]}
         />
-        <div className="footer" />
+        {this.props.user ? <Footer /> : <div className="footer" />}
       </div>
     );
   }

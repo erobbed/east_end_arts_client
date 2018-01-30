@@ -22,20 +22,21 @@ class Event extends React.Component {
   };
 
   render() {
+    const group_admin =
+      this.props.user &&
+      this.props.selectedGroup &&
+      this.props.selectedGroup.members
+        .filter(mem => mem.group_admin)
+        .map(mem => mem.user_id)
+        .includes(this.props.user.id);
     const admin =
-      (this.props.user &&
-        this.props.selectedGroup &&
-        this.props.selectedGroup.members
-          .filter(mem => mem.group_admin)
-          .map(mem => mem.user_id)
-          .includes(this.props.user.id)) ||
-      this.props.user.admin ? (
+      group_admin || this.props.user.admin ? (
         <PublishButton
           public={this.props.event.public}
           publish={this.publish}
         />
       ) : null;
-
+    console.log(this.props.user.admin);
     return (
       <Modal
         size="tiny"

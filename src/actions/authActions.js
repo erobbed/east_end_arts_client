@@ -38,6 +38,13 @@ export function signup(input) {
           });
 
           dispatch({
+            type: "SET_NOTICE",
+            payload: {
+              notice: res.notice
+            }
+          });
+
+          dispatch({
             type: "SET_EVENTS",
             payload: {
               events: res.events
@@ -89,6 +96,13 @@ export function login(input) {
           });
 
           dispatch({
+            type: "SET_NOTICE",
+            payload: {
+              notice: res.notice
+            }
+          });
+
+          dispatch({
             type: "SET_EVENTS",
             payload: {
               events: res.events
@@ -126,6 +140,13 @@ export function currentUser(jwt) {
           type: "SET_GROUPS",
           payload: {
             groups: res.groups
+          }
+        });
+
+        dispatch({
+          type: "SET_NOTICE",
+          payload: {
+            notice: res.notice
           }
         });
 

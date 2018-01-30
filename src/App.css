@@ -24,7 +24,7 @@
 
 h1:last-child {
   min-height: 0rem;
-  font-family: "Alegreya Sans SC", sans-serif !important;
+  font-family: "OratorStd", sans-serif !important;
   text-shadow: 1px 1px white !important;
   margin: 0 auto !important;
 }
@@ -43,7 +43,7 @@ h1:last-child {
     margin: 0 auto;
     font-size: 2.5vmin;
     text-shadow: 1px 1px white !important;
-    font-family: "Alegreya Sans SC", sans-serif !important;
+    font-family: "OratorStd", sans-serif !important;
   }
   .App-title {
     font-size: 3vmin;
@@ -71,7 +71,7 @@ h1:last-child {
 @media (min-width: 769px) {
   h1.App.title {
     text-shadow: 1px 1px white !important;
-    font-family: "Alegreya Sans SC", sans-serif !important;
+    font-family: "OratorStd", sans-serif !important;
   }
 
   .App-title {
@@ -92,7 +92,6 @@ h1:last-child {
 }
 
 .ui.menu:not(.vertical) .item > .button#log:hover {
-  box-shadow: 0 0 0 2px black inset !important;
   font-weight: bold;
   text-shadow: 1px 1px white !important;
 }
@@ -133,17 +132,18 @@ h1:last-child {
 .rbc-calendar {
   margin: auto;
   height: 50em;
-  width: 90%;
+  width: 80%;
   height: 40em;
   padding: 1%;
 }
 
 .footer {
-  width: 88%;
+  width: 78%;
   background-color: rgb(255, 253, 56);
-  height: 4em;
+  min-height: 4em;
   margin: 0 auto;
   margin-bottom: 2%;
+  overflow: overlay;
 }
 
 span.rbc-toolbar-label {
@@ -162,6 +162,7 @@ span.rbc-toolbar-label {
 .rbc-header,
 .rbc-btn-group > button {
   font-family: "OratorStd";
+  border-radius: 0;
 }
 
 .ui.list.groups {
@@ -196,14 +197,18 @@ span.rbc-toolbar-label {
   clear: both;
 }
 
-.addevent .addgroup {
+.addevent .addgroup button {
   display: inline-block;
   white-space: nowrap;
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 .add {
   margin: 10%;
+}
+
+.rbc-date-cell > a {
+  font-family: "OratorStd";
 }
 
 .react-datepicker__time-container

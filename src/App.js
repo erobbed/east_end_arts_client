@@ -78,6 +78,7 @@ class App extends Component {
             categories={this.state.categories}
             myEventsList={myEventsList}
             style={right}
+            user={this.props.user}
           />
         </div>
       </div>
