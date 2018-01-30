@@ -29,11 +29,12 @@ class Footer extends React.Component {
   }
 
   render() {
+    console.log(this.props.usable);
     return (
       <div className="footer">
         <ContentEditable
           html={this.state.html}
-          disabled={this.props.disabled}
+          disabled={this.props.usable}
           onChange={this.handleChange}
         />
         {this.props.user && this.props.user.admin ? (

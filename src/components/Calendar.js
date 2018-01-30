@@ -31,7 +31,7 @@ class MyCalendar extends React.Component {
   };
 
   render() {
-    let bool = this.props.user ? false : true;
+    let bool = this.props.user && this.props.user.admin ? false : true;
     return (
       <div>
         {this.state.selectedEvent ? (
