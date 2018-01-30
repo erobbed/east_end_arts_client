@@ -34,7 +34,7 @@ h1:last-child {
   margin: 0 auto !important;
   padding-bottom: 2%;
   overflow: hidden;
-  transition: max-height 1s;
+  transition: opacity 1s ease-in-out, max-height 1s;
   text-align: justify;
 }
 
@@ -53,7 +53,6 @@ h1:last-child {
   }
 
   .ui.secondary.pointing.menu a.item {
-    top: 5px;
     font-family: "OratorStd" !important;
   }
 
@@ -84,6 +83,10 @@ h1:last-child {
     top: 4em;
     font-family: "OratorStd", sans-serif !important;
   }
+
+  .ui.secondary.pointing.menu .item.header {
+    padding: none;
+  }
 }
 
 .ui.menu:not(.vertical) .item > .button#log {
@@ -105,7 +108,7 @@ h1:last-child {
   background-image: url("/Treaty-1.jpg");
   background-position: center;
   background-size: cover;
-  padding: 1.5em;
+
   width: 100%;
   border-radius: 0;
   height: 20vmin;
@@ -115,6 +118,18 @@ h1:last-child {
   .ui.segment.nav {
     background-size: 175% 275%;
     background-repeat: no-repeat;
+  }
+
+  .addgroup {
+    box-sizing: border-box;
+    line-height: 1;
+    font-size: 50%;
+  }
+
+  .addevent {
+    box-sizing: border-box;
+    line-height: 1;
+    font-size: 50%;
   }
 }
 
@@ -132,13 +147,13 @@ h1:last-child {
 .rbc-calendar {
   margin: auto;
   height: 50em;
-  width: 80%;
+  width: 100%;
   height: 40em;
   padding: 1%;
 }
 
 .footer {
-  width: 78%;
+  width: 98%;
   background-color: rgb(255, 253, 56);
   min-height: 4em;
   margin: 0 auto;
@@ -146,6 +161,10 @@ h1:last-child {
   overflow: overlay;
   text-align: justify;
   padding: 0.5%;
+}
+
+.footer > div > p {
+  font-size: 1.5vmin;
 }
 
 span.rbc-toolbar-label {
@@ -168,23 +187,51 @@ span.rbc-toolbar-label {
 }
 
 .ui.list.groups {
-  margin: 0 auto;
+  margin: auto;
   text-align: left;
+}
+
+.groups {
+  margin-bottom: 1%;
+}
+
+.about {
+  float: left;
+  opacity: 0;
+  -webkit-transition: opacity 2s ease-in-out, left 1s, ease-in-out width 1s;
+  transition: opacity 2s ease-in-out, left 1s, ease-in-out width 1s;
+  direction: rtl;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+ul,
+li {
+  font-size: 1.5vmin;
+  list-style-type: none;
+  text-align: left;
+  margin: 0;
+}
+
+h6 {
+  margin: 3% 0;
+  text-align: left;
+  font-size: 1.5vmin;
 }
 
 .left {
   float: left;
-  -webkit-transition: left 2s, ease-out width 2s;
-  transition: left 2s, ease-out width 2s;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  -webkit-transition: opacity 1s ease-in-out, left 1s, ease-in-out width 1s;
+  transition: opacity 1s ease-in-out, left 1s, ease-in-out width 1s;
   font-size: 1em;
-  direction: rtl;
 }
 
 .riight {
   float: right;
-  -webkit-transition: right 2s, width 2s;
-  transition: right 2s, width 2s;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
   direction: ltr;
 }
 
@@ -199,14 +246,35 @@ span.rbc-toolbar-label {
   clear: both;
 }
 
-.addevent .addgroup button {
-  display: inline-block;
-  white-space: nowrap;
-  border-radius: 0;
+.add {
+  margin: 3%;
 }
 
-.add {
-  margin: 10%;
+.addgroup {
+  display: flex;
+  white-space: nowrap;
+  border-radius: 0rem;
+  float: right;
+  background: transparent;
+  border: 1px solid #ccc;
+  font-family: "OratorStd";
+  font-size: 1.75vmin;
+  margin-bottom: 5%;
+  max-height: 10%;
+  padding: 0.375rem 1rem;
+}
+
+.addevent {
+  float: left;
+  display: flex;
+  border-radius: 0rem;
+  background: transparent;
+  border: 1px solid #ccc;
+  font-family: "OratorStd";
+  font-size: 1.75vmin;
+  margin-bottom: 5%;
+  max-height: 10%;
+  padding: 0.375rem 1rem;
 }
 
 .rbc-date-cell > a {
@@ -313,4 +381,8 @@ span.rbc-toolbar-label {
 
 .ui.checkbox input.hidden + label {
   font-size: 2vmin;
+}
+
+button:hover {
+  cursor: pointer;
 }

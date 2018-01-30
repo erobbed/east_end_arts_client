@@ -7,6 +7,7 @@ import { getLatestNotice } from "./actions/noticeActions";
 import MyCalendar from "./components/Calendar";
 import NavBar from "./components/assets/NavBar";
 import Mission from "./components/assets/Mission";
+import About from "./components/assets/About";
 import GroupContainer from "./components/GroupContainer";
 import Filter from "./components/hocs/Filter";
 import "./App.css";
@@ -17,6 +18,7 @@ const WithFilter = Filter(MyCalendar);
 class App extends Component {
   state = {
     mission: false,
+    about: false,
     categories: [
       { id: 1, name: "Art Exhibit" },
       { id: 2, name: "Music" },
@@ -44,6 +46,12 @@ class App extends Component {
     });
   };
 
+  handleAbout = () => {
+    this.setState({
+      about: !this.state.about
+    });
+  };
+
   render() {
     let myEventsList = this.props.selectedGroup
       ? this.props.events.filter(
@@ -51,31 +59,46 @@ class App extends Component {
         )
       : this.props.events.filter(event => event.public);
 
-    let left = this.props.loggedIn ? { width: "15%" } : { width: "0px" };
-    let right = this.props.loggedIn
-      ? { width: "85%" }
-      : { width: "100%", margin: "0 auto" };
+    let left =
+      this.props.loggedIn || this.state.about
+        ? { width: "20%", opacity: "1" }
+        : { width: "0px", opacity: "0" };
+    let right =
+      this.props.loggedIn || this.state.about
+        ? { width: "80%" }
+        : { width: "100%", margin: "0 auto" };
     let mission = this.state.mission
-      ? { maxHeight: "600px", visibility: "visible" }
-      : { maxHeight: "0px", visibility: "hidden" };
+      ? { maxHeight: "600px", opacity: "1" }
+      : { maxHeight: "0px", opacity: "0" };
+
+    let about = this.state.about
+      ? { width: "100%", opacity: "1" }
+      : { width: "0px", opacity: "0" };
+
+    let groups = this.props.loggedIn
+      ? { width: "100%", opacity: "1" }
+      : { width: "0px", opacity: "0" };
 
     return (
       <div className="App">
-        <NavBar mission={this.handleMission} />
+        <NavBar mission={this.handleMission} about={this.handleAbout} />
         <div className="mission" style={mission}>
           <Mission />
         </div>
         <div className="page">
-          {this.props.loggedIn ? (
-            <div className="column left" style={left}>
+          <div className="column left" style={left}>
+            {this.props.loggedIn ? (
               <GroupContainer
                 groups={this.props.groups}
                 selectedGroup={this.props.selectedGroup}
+                about={about}
+                css={groups}
               />
+            ) : null}
+            <div className="about" style={about}>
+              <About />
             </div>
-          ) : (
-            <div className="column left" style={left} />
-          )}
+          </div>
           <WithFilter
             categories={this.state.categories}
             myEventsList={myEventsList}

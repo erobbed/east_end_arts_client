@@ -29,7 +29,6 @@ class Footer extends React.Component {
   }
 
   render() {
-    console.log(this.props.usable);
     return (
       <div className="footer">
         <ContentEditable

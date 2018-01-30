@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon, Modal } from "semantic-ui-react";
+import { Modal } from "semantic-ui-react";
 import CreateGroup from "./CreateGroup";
 
 class AddGroupModal extends React.Component {
@@ -24,8 +24,8 @@ class AddGroupModal extends React.Component {
           closeIcon
           onClose={this.handleClose}
           trigger={
-            <button size="mini" className="addgroup" onClick={this.handleClick}>
-              Add Group<Icon name="plus" />
+            <button className="addgroup" onClick={this.handleClick}>
+              Add Group
             </button>
           }
         >

@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon, Modal } from "semantic-ui-react";
+import { Modal } from "semantic-ui-react";
 import CreateEvent from "./CreateEvent";
 
 class AddEventModal extends React.Component {
@@ -24,8 +24,8 @@ class AddEventModal extends React.Component {
           closeIcon
           onClose={this.handleClose}
           trigger={
-            <button onClick={this.handleClick}>
-              Add Event<Icon name="plus" />
+            <button onClick={this.handleClick} className="addevent">
+              Add Event
             </button>
           }
         >

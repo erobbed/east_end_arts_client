@@ -11,8 +11,12 @@ class NavBar extends React.Component {
     this.props.logOut();
   };
 
-  handleClick = () => {
+  handleMission = () => {
     this.props.mission();
+  };
+
+  handleAbout = () => {
+    this.props.about();
   };
 
   render() {
@@ -34,13 +38,18 @@ class NavBar extends React.Component {
       <Segment className="nav">
         <Menu pointing secondary className="main-nav" size="tiny">
           <Menu.Item href={url} name="Town of Southampton" key="home" />
-          <Menu.Item onClick={this.handleClick} name="Mission" key="mission" />
+          <Menu.Item
+            onClick={this.handleMission}
+            name="Mission"
+            key="mission"
+          />
           <Menu.Item className="header">
             <h1 className="App-title">
               Southampton Arts and Culture Committee (SHACC)
             </h1>
           </Menu.Item>
           <Menu.Menu position="right" key="right">
+            <Menu.Item onClick={this.handleAbout} name="About" key="about" />
             <Menu.Item>
               {this.props.loggedIn ? (
                 logout

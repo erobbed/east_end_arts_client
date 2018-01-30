@@ -23,8 +23,8 @@ const GroupContainer = props => {
     ));
 
   return (
-    <div className="column left">
-      <List divided verticalAlign="middle" className="groups">
+    <div className="groups" style={props.css}>
+      <List divided verticalAlign="middle" className="groups" style={props.css}>
         {groups}
       </List>
       <AddGroupModal />
