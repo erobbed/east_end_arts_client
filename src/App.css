@@ -144,6 +144,8 @@ h1:last-child {
   margin: 0 auto;
   margin-bottom: 2%;
   overflow: overlay;
+  text-align: justify;
+  padding: 0.5%;
 }
 
 span.rbc-toolbar-label {

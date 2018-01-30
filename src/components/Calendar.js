@@ -31,6 +31,7 @@ class MyCalendar extends React.Component {
   };
 
   render() {
+    let bool = this.props.user ? false : true;
     return (
       <div>
         {this.state.selectedEvent ? (
@@ -49,7 +50,7 @@ class MyCalendar extends React.Component {
           onSelectEvent={this.handleSelect}
           views={["month", "week"]}
         />
-        {this.props.user ? <Footer /> : <div className="footer" />}
+        <Footer usable={bool} user={this.props.user} />
       </div>
     );
   }

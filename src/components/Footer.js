@@ -33,17 +33,19 @@ class Footer extends React.Component {
       <div className="footer">
         <ContentEditable
           html={this.state.html}
-          disabled={false}
+          disabled={this.props.disabled}
           onChange={this.handleChange}
         />
-        <Button
-          size="tiny"
-          icon
-          style={{ float: "right", background: "transparent" }}
-          onClick={this.handleClick}
-        >
-          <Icon name="checkmark box" />
-        </Button>
+        {this.props.user && this.props.user.admin ? (
+          <Button
+            size="tiny"
+            icon
+            style={{ float: "right", background: "transparent" }}
+            onClick={this.handleClick}
+          >
+            <Icon name="checkmark box" />
+          </Button>
+        ) : null}
       </div>
     );
   }

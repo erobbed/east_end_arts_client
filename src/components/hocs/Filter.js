@@ -24,7 +24,11 @@ export default function withFilter(Calendar) {
 
       return (
         <div className="filter column riight" style={this.props.style}>
-          <Calendar myEventsList={eventsList} user={this.props.user} />
+          <Calendar
+            myEventsList={eventsList}
+            user={this.props.user}
+            notice={this.props.notice}
+          />
           {this.props.categories.map(category => (
             <Checkbox
               label={category.name}

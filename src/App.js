@@ -3,6 +3,7 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { currentUser } from "./actions/authActions";
 import { getEvents } from "./actions/eventActions";
+import { getLatestNotice } from "./actions/noticeActions";
 import MyCalendar from "./components/Calendar";
 import NavBar from "./components/assets/NavBar";
 import Mission from "./components/assets/Mission";
@@ -33,6 +34,7 @@ class App extends Component {
       return this.props.currentUser(jwt);
     } else {
       this.props.getEvents();
+      this.props.getLatestNotice();
     }
   }
 
@@ -79,6 +81,7 @@ class App extends Component {
             myEventsList={myEventsList}
             style={right}
             user={this.props.user}
+            notice={this.props.notice}
           />
         </div>
       </div>
@@ -87,7 +90,10 @@ class App extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ currentUser, getEvents }, dispatch);
+  return bindActionCreators(
+    { currentUser, getEvents, getLatestNotice },
+    dispatch
+  );
 }
 
 function mapStateToProps(state) {
@@ -96,7 +102,8 @@ function mapStateToProps(state) {
     user: state.auth.user,
     groups: state.groups.groups,
     selectedGroup: state.groups.selectedGroup,
-    events: state.events.all
+    events: state.events.all,
+    notice: state.notice.latest
   };
 }
 
