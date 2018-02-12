@@ -22,7 +22,15 @@
   margin: 0 auto;
 }
 
-h1:last-child {
+.ui.fluid.dropdown.categories {
+  width: auto;
+  float: right;
+  margin-right: 1%;
+  max-width: 98%;
+}
+
+h1,
+h3 {
   min-height: 0rem;
   font-family: "OratorStd", sans-serif !important;
   text-shadow: 1px 1px white !important;

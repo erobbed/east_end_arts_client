@@ -108,8 +108,8 @@ class CreateEvent extends React.Component {
               .hours(9)
               .minutes(0)}
             maxTime={moment()
-              .hours(24)
-              .minutes(0)}
+              .hours(23)
+              .minutes(59)}
             dateFormat="LLL"
             id="start"
           />
@@ -123,6 +123,12 @@ class CreateEvent extends React.Component {
             isClearable={true}
             showTimeSelect
             timeIntervals={15}
+            minTime={moment()
+              .hours(9)
+              .minutes(0)}
+            maxTime={moment()
+              .hours(23)
+              .minutes(59)}
             dateFormat="LLL"
           />
         </Form.Field>
