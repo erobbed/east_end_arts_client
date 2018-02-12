@@ -18,15 +18,28 @@ export default class About extends React.Component {
       <div>
         <h6>COMMITTEE MEMBERS</h6>
         <ul>{members.map((mem, ind) => <li key={ind}>{mem}</li>)}</ul>
+        <br />
         <h6>EX-OFFICIO </h6>
         <ul>
           <li>Jay Schneiderman, Town Supervisor</li>
-          <li>jschneiderman@southamptontownny.gov</li>
-          <li>631-283-6055</li>
+          <li>
+            <a href="mailto:jschneiderman@southamptontownny.gov">
+              jschneiderman@southamptontownny.gov
+            </a>
+          </li>
+          <li>
+            <a href="tel: 631-283-6055">631-283-6055</a>
+          </li>
           <br />
           <li>Tommie John Schiavoni, Town Council Liaison</li>
-          <li>tjschiavoni@southamptontownny.gov</li>
-          <li>631-287-5745</li>
+          <li>
+            <a href="mailto:tjschiavoni@southamptontownny.gov">
+              tjschiavoni@southamptontownny.gov
+            </a>
+          </li>
+          <li>
+            <a href="tel: 631-287-5745">631-287-5745</a>
+          </li>
         </ul>
       </div>
     );
