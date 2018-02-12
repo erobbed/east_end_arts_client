@@ -1,5 +1,4 @@
 import React from "react";
-import { List } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { selectGroup, deselectGroup } from "../actions/groupActions";
@@ -20,12 +19,22 @@ class Group extends React.Component {
   render() {
     let style =
       this.props.selectedGroup.id === this.props.group.id
-        ? { fontWeight: "bold", textDecoration: "underline", color: "green" }
+        ? {
+            fontWeight: "bold",
+            textDecoration: "underline",
+            color: "white",
+            background: "rgb(53,117,171)"
+          }
         : { fontWeight: "normal" };
     return (
-      <List.Item onClick={this.handleClick} style={style}>
-        {this.props.group.name}
-      </List.Item>
+      <div>
+        <div className="group" onClick={this.handleClick} style={style}>
+          {this.props.group.name}
+          {this.props.group.id === this.props.selectedGroup.id ? (
+            <div style={{ float: "right" }}> X </div>
+          ) : null}
+        </div>
+      </div>
     );
   }
 }

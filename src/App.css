@@ -32,6 +32,16 @@
   margin-bottom: 1%;
 }
 
+.ui.fluid.dropdown.groups {
+  border-radius: 0rem;
+  font-family: "OratorStd", sans-serif !important;
+  width: auto;
+}
+
+.ui.selection.dropdown .menu > .item {
+  font-size: 2vmin;
+}
+
 h1,
 h3 {
   min-height: 0rem;
@@ -144,15 +154,14 @@ h3 {
   }
 }
 
-.list > .item:hover {
-  color: green;
-  cursor: pointer;
-}
-
-.list > .item {
+.group {
   padding: 2%;
   margin: 0 auto;
   font-size: 90%;
+}
+
+.group:hover {
+  cursor: pointer;
 }
 
 .rbc-calendar {
@@ -264,10 +273,6 @@ h6 {
   clear: both;
 }
 
-.add {
-  margin: 3%;
-}
-
 .addgroup {
   display: flex;
   white-space: nowrap;
@@ -278,6 +283,7 @@ h6 {
   font-family: "OratorStd";
   font-size: 1.75vmin;
   margin-bottom: 5%;
+  margin-top: 1%;
   max-height: 10%;
   padding: 0.375rem 1rem;
 }
@@ -291,6 +297,7 @@ h6 {
   font-family: "OratorStd";
   font-size: 1.75vmin;
   margin-bottom: 5%;
+  margin-top: 1%;
   max-height: 10%;
   padding: 0.375rem 1rem;
 }
