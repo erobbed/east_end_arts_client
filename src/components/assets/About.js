@@ -23,6 +23,10 @@ export default class About extends React.Component {
           <li>Jay Schneiderman, Town Supervisor</li>
           <li>jschneiderman@southamptontownny.gov</li>
           <li>631-283-6055</li>
+          <br />
+          <li>Tommie John Schiavoni, Town Council Liaison</li>
+          <li>tjschiavoni@southamptontownny.gov</li>
+          <li>631-287-5745</li>
         </ul>
       </div>
     );
