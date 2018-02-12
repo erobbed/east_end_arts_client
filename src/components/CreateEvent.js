@@ -104,6 +104,12 @@ class CreateEvent extends React.Component {
             isClearable={true}
             showTimeSelect
             timeIntervals={15}
+            minTime={moment()
+              .hours(9)
+              .minutes(0)}
+            maxTime={moment()
+              .hours(24)
+              .minutes(0)}
             dateFormat="LLL"
             id="start"
           />

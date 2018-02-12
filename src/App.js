@@ -21,12 +21,20 @@ class App extends Component {
     about: false,
     categories: [
       { id: 1, name: "Art Exhibit" },
-      { id: 2, name: "Music" },
-      { id: 3, name: "Theatre" },
-      { id: 4, name: "Performance" },
-      { id: 5, name: "Readings" },
-      { id: 6, name: "Book Signing" },
-      { id: 7, name: "Children's Program" }
+      { id: 2, name: "Astronomy" },
+      { id: 3, name: "Benefit Event" },
+      { id: 4, name: "Book Signing" },
+      { id: 5, name: "Children’s Program" },
+      { id: 6, name: "Culinary" },
+      { id: 7, name: "Ecology" },
+      { id: 8, name: "Film" },
+      { id: 9, name: "Lecture" },
+      { id: 10, name: "Literary" },
+      { id: 11, name: "Music" },
+      { id: 12, name: "Nature" },
+      { id: 13, name: "Performance" },
+      { id: 14, name: "Theatre" },
+      { id: 15, name: "Walking Tours and Trails" }
     ]
   };
 
