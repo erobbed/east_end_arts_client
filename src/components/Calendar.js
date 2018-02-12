@@ -30,7 +30,6 @@ class MyCalendar extends React.Component {
   };
 
   render() {
-    console.log(this.props.myEventsList);
     return (
       <div>
         {this.state.selectedEvent ? (

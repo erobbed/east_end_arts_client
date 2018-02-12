@@ -24,12 +24,12 @@ export default function withFilter(Calendar) {
     };
 
     handleChange = (e, obj) => {
-      this.setState({ [obj.value]: !this.state[obj.value] });
+      this.setState({ selected: obj.value });
     };
 
     render() {
-      const eventsList = this.props.myEventsList.filter(
-        event => this.state[event.category_id]
+      const eventsList = this.props.myEventsList.filter(event =>
+        this.state.selected.includes(event.category_id)
       );
 
       const options = this.props.categories.map(category => {

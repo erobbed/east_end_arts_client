@@ -70,7 +70,6 @@ class CreateEvent extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     let categories = this.props.categories.map((cat, index) => {
       return { key: index, text: cat, id: index + 1, value: cat };
     });

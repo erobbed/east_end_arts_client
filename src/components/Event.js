@@ -36,7 +36,6 @@ class Event extends React.Component {
           publish={this.publish}
         />
       ) : null;
-    console.log(this.props.user.admin);
     return (
       <Modal
         size="tiny"
