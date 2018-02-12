@@ -27,6 +27,8 @@
   float: right;
   margin-right: 1%;
   max-width: 98%;
+  border-radius: 0rem;
+  font-family: "OratorStd", sans-serif !important;
 }
 
 h1,
