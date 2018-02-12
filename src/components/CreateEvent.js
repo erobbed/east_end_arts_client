@@ -91,6 +91,7 @@ class CreateEvent extends React.Component {
             options={categories}
             onChange={this.handleSelect}
             id="category"
+            scrolling
           />
           <label>Details</label>
           <Form.TextArea onChange={this.handleChange} id="details" />

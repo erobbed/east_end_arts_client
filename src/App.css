@@ -29,6 +29,7 @@
   max-width: 98%;
   border-radius: 0rem;
   font-family: "OratorStd", sans-serif !important;
+  margin-bottom: 1%;
 }
 
 h1,
@@ -213,6 +214,7 @@ span.rbc-toolbar-label {
   direction: rtl;
   margin: 0 auto;
   overflow: hidden;
+  margin-bottom: 3%;
 }
 
 ul,
