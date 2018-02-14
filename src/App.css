@@ -34,12 +34,46 @@
 
 .ui.fluid.dropdown.groups {
   border-radius: 0rem;
-  font-family: "OratorStd", sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   width: auto;
 }
 
 .ui.selection.dropdown .menu > .item {
   font-size: 2vmin;
+}
+
+.ui.button.submit {
+  border-radius: 0rem;
+  font-family: "OratorStd", sans-serif !important;
+  background-color: rgb(53, 117, 171);
+  color: white;
+}
+
+.ui.form .field > label {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-weight: bold;
+}
+
+.ui.button.toggle {
+  float: right;
+}
+
+.ui.card.event {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.ui.checkbox {
+  margin: 1%;
+}
+
+.ui.checkbox input.hidden + label {
+  font-size: 2vmin;
+}
+
+.ui.list.groups {
+  margin: auto;
+  text-align: left;
 }
 
 h1,
@@ -162,16 +196,8 @@ h3 {
 
 .group:hover {
   cursor: pointer;
+  background-color: rgb(229, 229, 229);
 }
-
-.rbc-calendar {
-  margin: auto;
-  height: 50em;
-  width: 100%;
-  height: 40em;
-  padding: 1%;
-}
-
 .footer {
   width: 98%;
   background-color: rgb(255, 253, 56);
@@ -181,34 +207,45 @@ h3 {
   overflow: overlay;
   text-align: justify;
   padding: 0.5%;
+  font-family: "OratorStd";
 }
 
 .footer > div > p {
   font-size: 1.5vmin;
 }
 
-span.rbc-toolbar-label {
-  font-family: "OratorStd";
-  font-size: 3vmin;
-}
-
-@media (max-width: 768px) {
-  div.rbc-toolbar > span.rbc-btn-group > button {
-    padding: 2px 4px;
-    font-size: 80%;
-    line-height: 1;
-  }
-}
-
-.rbc-header,
-.rbc-btn-group > button {
-  font-family: "OratorStd";
-  border-radius: 0;
-}
-
-.ui.list.groups {
-  margin: auto;
+.meetings {
+  margin: 3% 0;
+  padding: 3%;
   text-align: left;
+  background-color: rgb(231, 255, 255);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  height: 13vh;
+}
+
+.meetings > p {
+  font-size: 1.5vmin;
+}
+
+.resource {
+  margin: 1%;
+  height: 20vh;
+}
+
+.resource.map {
+  background-image: url("/Map.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.resource.canal {
+  background-image: url("/Canal.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.members {
+  margin: 1%;
 }
 
 .groups {
@@ -282,7 +319,6 @@ h6 {
   border: 1px solid #ccc;
   font-family: "OratorStd";
   font-size: 1.75vmin;
-  margin-bottom: 5%;
   margin-top: 1%;
   max-height: 10%;
   padding: 0.375rem 1rem;
@@ -296,10 +332,40 @@ h6 {
   border: 1px solid #ccc;
   font-family: "OratorStd";
   font-size: 1.75vmin;
-  margin-bottom: 5%;
   margin-top: 1%;
   max-height: 10%;
   padding: 0.375rem 1rem;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+span.rbc-toolbar-label {
+  font-family: "OratorStd";
+  font-size: 3vmin;
+}
+
+@media (max-width: 768px) {
+  div.rbc-toolbar > span.rbc-btn-group > button {
+    padding: 2px 4px;
+    font-size: 80%;
+    line-height: 1;
+  }
+}
+
+.rbc-calendar {
+  margin: auto;
+  height: 50em;
+  width: 100%;
+  height: 40em;
+  padding: 1%;
+}
+
+.rbc-header,
+.rbc-btn-group > button {
+  font-family: "OratorStd";
+  border-radius: 0;
 }
 
 .rbc-date-cell > a {
@@ -389,25 +455,4 @@ h6 {
 }
 .geosuggest__item__matched-text {
   font-weight: bold;
-}
-
-.ui.button.toggle {
-  float: right;
-}
-
-.ui.card.event {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.ui.checkbox {
-  margin: 1%;
-}
-
-.ui.checkbox input.hidden + label {
-  font-size: 2vmin;
-}
-
-button:hover {
-  cursor: pointer;
 }

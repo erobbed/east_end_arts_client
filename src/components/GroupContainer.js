@@ -5,12 +5,7 @@ import AddGroupModal from "./AddGroupModal";
 import AddEventModal from "./AddEventModal";
 
 class GroupContainer extends React.Component {
-  state = {};
-
-  handleSelect = (e, { value }) => console.log(e, value);
-
   render() {
-    const { value } = this.state;
     let sortable = (a, b) => {
       let newA =
         a.name.split(" ")[0] === "The"
@@ -28,6 +23,7 @@ class GroupContainer extends React.Component {
         <Group
           group={group}
           key={group.id}
+          text={group.name}
           selectedGroup={this.props.selectedGroup}
           value={group.name}
         />
@@ -41,8 +37,6 @@ class GroupContainer extends React.Component {
           fluid
           selection
           options={groups}
-          onChange={this.handleSelect}
-          value={value}
         />
         <AddGroupModal />
         {this.props.selectedGroup ? (

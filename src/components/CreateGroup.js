@@ -27,7 +27,9 @@ class GroupForm extends React.Component {
           <label>Group Name</label>
           <Input onChange={this.handleChange} id="group" />
         </Form.Field>
-        <Button type="submit">Submit</Button>
+        <Button type="submit" className="submit" size="mini">
+          Submit
+        </Button>
       </Form>
     );
   }
