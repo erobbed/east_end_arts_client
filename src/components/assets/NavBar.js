@@ -49,8 +49,13 @@ class NavBar extends React.Component {
             </h1>
           </Menu.Item>
           <Menu.Menu position="right" key="right">
-            <Menu.Item onClick={this.handleAbout} name="About" key="about" />
-            <Menu.Item>
+            <Menu.Item
+              onClick={this.handleAbout}
+              name="About"
+              id="about"
+              key="about"
+            />
+            <Menu.Item id="log">
               {this.props.loggedIn ? (
                 logout
               ) : (

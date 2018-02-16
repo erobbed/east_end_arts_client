@@ -17,7 +17,7 @@ class AddGroupModal extends React.Component {
 
   render() {
     return (
-      <div className="add">
+      <div>
         <Modal
           size="tiny"
           open={this.state.open}

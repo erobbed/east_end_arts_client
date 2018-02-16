@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "../Footer";
+import GroupContainer from "../GroupContainer";
 import { Dropdown } from "semantic-ui-react";
 
 export default function withFilter(Calendar) {
@@ -28,6 +29,10 @@ export default function withFilter(Calendar) {
     };
 
     render() {
+      let groups = this.props.loggedIn
+        ? { width: "100%", opacity: "1" }
+        : { width: "0px", opacity: "0" };
+
       const eventsList = this.props.myEventsList.filter(event =>
         this.state.selected.includes(event.category_id)
       );
@@ -40,7 +45,16 @@ export default function withFilter(Calendar) {
 
       return (
         <div className="filter column riight" style={this.props.style}>
-          <h3>Calendar of Arts and Culture on the East End</h3>
+          <h2 className="title">
+            Calendar of Arts and Culture on the East End
+          </h2>
+          {this.props.loggedIn ? (
+            <GroupContainer
+              groups={this.props.groups}
+              selectedGroup={this.props.selectedGroup}
+              css={groups}
+            />
+          ) : null}
           <Calendar
             myEventsList={eventsList}
             user={this.props.user}

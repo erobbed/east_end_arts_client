@@ -35,7 +35,10 @@
 .ui.fluid.dropdown.groups {
   border-radius: 0rem;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  width: auto;
+  width: 25%;
+  margin: 0 auto;
+  margin-right: 1%;
+  float: right;
 }
 
 .ui.selection.dropdown .menu > .item {
@@ -71,17 +74,16 @@
   font-size: 2vmin;
 }
 
-.ui.list.groups {
-  margin: auto;
-  text-align: left;
-}
-
-h1,
-h3 {
+h1 {
   min-height: 0rem;
   font-family: "OratorStd", sans-serif !important;
   text-shadow: 1px 1px white !important;
   margin: 0 auto !important;
+}
+
+h2 {
+  text-decoration: underline;
+  font-family: "OratorStd", sans-serif !important;
 }
 
 .mission {
@@ -100,6 +102,15 @@ h3 {
     text-shadow: 1px 1px white !important;
     font-family: "OratorStd", sans-serif !important;
   }
+
+  button.addgroup {
+    font-size: 1em;
+    padding: 0 0.25rem;
+  }
+
+  h2.title {
+    font-size: 3vmin;
+  }
   .App-title {
     font-size: 3vmin;
     color: black;
@@ -109,6 +120,16 @@ h3 {
 
   .ui.secondary.pointing.menu a.item {
     font-family: "OratorStd" !important;
+  }
+
+  .ui.secondary.pointing.menu .item#log {
+    padding: 1% !important;
+    margin: 0.25% !important;
+  }
+
+  .ui.secondary.pointing.menu a.item {
+    padding-left: 0 !important;
+    margin-right: 1%;
   }
 
   .header.item {
@@ -249,7 +270,7 @@ h3 {
 }
 
 .groups {
-  margin-bottom: 1%;
+  margin: 2%;
 }
 
 .about {
@@ -311,30 +332,35 @@ h6 {
 }
 
 .addgroup {
-  display: flex;
   white-space: nowrap;
   border-radius: 0rem;
-  float: right;
   background: transparent;
   border: 1px solid #ccc;
   font-family: "OratorStd";
   font-size: 1.75vmin;
-  margin-top: 1%;
-  max-height: 10%;
+  max-height: 20%;
   padding: 0.375rem 1rem;
+  float: right;
+  clear: left;
+  margin-right: 1%;
+}
+
+button.addgroup,
+button.addevent {
+  line-height: 2em;
 }
 
 .addevent {
-  float: left;
-  display: flex;
   border-radius: 0rem;
   background: transparent;
   border: 1px solid #ccc;
   font-family: "OratorStd";
   font-size: 1.75vmin;
-  margin-top: 1%;
   max-height: 10%;
   padding: 0.375rem 1rem;
+  float: right;
+  margin-right: 0.5%;
+  line-height: 1em;
 }
 
 button:hover {

@@ -30,7 +30,7 @@ class GroupContainer extends React.Component {
       ));
 
     return (
-      <div className="groups" style={this.props.css}>
+      <div style={this.props.css}>
         <Dropdown
           className="groups"
           placeholder="Select Group"
