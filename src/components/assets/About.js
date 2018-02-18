@@ -30,7 +30,7 @@ export default class About extends React.Component {
               </a>
             </li>
             <li>
-              <a href="tel: 631-283-6055">631-283-6055</a>
+              <a href="tel:+16312836055">+1 (631) 283-6055</a>
             </li>
             <li>Tommie John Schiavoni, Town Council Liaison</li>
             <li>
@@ -39,7 +39,7 @@ export default class About extends React.Component {
               </a>
             </li>
             <li>
-              <a href="tel: 631-287-5745">631-287-5745</a>
+              <a href="tel:+16312875745">+1 (631) 287-5745</a>
             </li>
           </ul>
         </div>
