@@ -2,14 +2,12 @@ import React from "react";
 import { Form, Input, Button } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { signup } from "../actions/authActions";
+import { login } from "../../../actions/authActions";
 
-class Signup extends React.Component {
+class Login extends React.Component {
   state = {
     username: "",
-    email: "",
-    password: "",
-    "password confirmation": ""
+    password: ""
   };
 
   handleChange = e => {
@@ -28,13 +26,9 @@ class Signup extends React.Component {
     }
 
     if (valid) {
-      this.props.signup(this.state).then(failure => {
+      this.props.login(this.state).then(failure => {
         if (failure) {
-          for (let key in failure) {
-            failure[key].forEach(message => {
-              alert(key + " " + message);
-            });
-          }
+          alert(failure);
         }
       });
     } else {
@@ -45,7 +39,7 @@ class Signup extends React.Component {
   render() {
     return (
       <Form onSubmit={this.handleSubmit}>
-        <Form.Field required>
+        <Form.Field>
           <label>Username</label>
           <Input
             placeholder="username"
@@ -53,40 +47,23 @@ class Signup extends React.Component {
             id="username"
           />
         </Form.Field>
-        <Form.Field required>
-          <label>Email</label>
-          <Input
-            placeholder="example@example.com"
-            onChange={this.handleChange}
-            id="email"
-          />
-        </Form.Field>
-        <Form.Field required>
+        <Form.Field>
           <label>Password</label>
           <Input
+            type="password"
             placeholder="password"
             onChange={this.handleChange}
             id="password"
-            type="password"
           />
         </Form.Field>
-        <Form.Field required>
-          <label>Confirm Password</label>
-          <Input
-            placeholder="confirm password"
-            onChange={this.handleChange}
-            id="password confirmation"
-            type="password"
-          />
-        </Form.Field>
-        <Button type="submit">Sign Up</Button>
+        <Button type="submit">Log In</Button>
       </Form>
     );
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ signup }, dispatch);
+  return bindActionCreators({ login }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(Signup);
+export default connect(null, mapDispatchToProps)(Login);

@@ -2,7 +2,7 @@ import React from "react";
 import Group from "./Group";
 import { Dropdown } from "semantic-ui-react";
 import AddGroupModal from "./AddGroupModal";
-import AddEventModal from "./AddEventModal";
+import AddEventModal from "../events/AddEventModal";
 
 class GroupContainer extends React.Component {
   render() {

@@ -2,9 +2,9 @@ import React from "react";
 import { Modal, Card } from "semantic-ui-react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { publish } from "../actions/eventActions";
+import { publish } from "../../actions/eventActions";
 import PublishButton from "./PublishButton";
-import MapContainer from "./Map";
+import MapContainer from "../assets/Map";
 import moment from "moment";
 
 class Event extends React.Component {

@@ -1,8 +1,8 @@
 import React from "react";
 import Login from "./Login";
 import Signup from "./Signup";
-import SignupButton from "./assets/SignupButton";
-import LoginButton from "./assets/LoginButton";
+import SignupButton from "./SignupButton";
+import LoginButton from "./LoginButton";
 
 class FormContainer extends React.Component {
   state = {

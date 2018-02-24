@@ -2,7 +2,7 @@ import React from "react";
 import ContentEditable from "react-contenteditable";
 import { Button, Icon } from "semantic-ui-react";
 import { bindActionCreators } from "redux";
-import { setNotice } from "../actions/noticeActions";
+import { setNotice } from "../../actions/noticeActions";
 import { connect } from "react-redux";
 
 class Footer extends React.Component {

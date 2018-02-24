@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Button, Input } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { createGroup } from "../actions/groupActions";
+import { createGroup } from "../../actions/groupActions";
 
 class GroupForm extends React.Component {
   state = {

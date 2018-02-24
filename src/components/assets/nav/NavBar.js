@@ -2,9 +2,9 @@ import React from "react";
 import { Menu, Segment, Button } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { logOut } from "../../actions/authActions";
+import { logOut } from "../../../actions/authActions";
 import { Route } from "react-router";
-import ModalContainer from "../Modal";
+import ModalContainer from "./Modal";
 
 class NavBar extends React.Component {
   handleLogout = () => {

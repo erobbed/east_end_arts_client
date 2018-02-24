@@ -4,7 +4,7 @@ import DatePicker from "react-datepicker";
 import moment from "moment";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { createEvent } from "../actions/eventActions";
+import { createEvent } from "../../actions/eventActions";
 import Geosuggest from "react-geosuggest";
 import "react-datepicker/dist/react-datepicker.css";
 

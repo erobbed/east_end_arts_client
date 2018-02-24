@@ -1,6 +1,6 @@
 import React from "react";
-import Footer from "../Footer";
-import GroupContainer from "../GroupContainer";
+import Footer from "../assets/Footer";
+import GroupContainer from "../groups/GroupContainer";
 import { Dropdown } from "semantic-ui-react";
 
 export default function withFilter(Calendar) {

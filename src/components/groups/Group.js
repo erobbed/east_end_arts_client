@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { selectGroup, deselectGroup } from "../actions/groupActions";
+import { selectGroup, deselectGroup } from "../../actions/groupActions";
 
 class Group extends React.Component {
   handleClick = () => {
