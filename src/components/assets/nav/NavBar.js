@@ -1,9 +1,10 @@
 import React from "react";
-import { Menu, Segment, Button } from "semantic-ui-react";
+import { Menu, Segment } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { logOut } from "../../../actions/authActions";
 import { Route } from "react-router";
+import Logout from "./Logout";
 import ModalContainer from "./Modal";
 
 class NavBar extends React.Component {
@@ -20,17 +21,6 @@ class NavBar extends React.Component {
   };
 
   render() {
-    const logout = (
-      <Button
-        basic
-        secondary
-        color="black"
-        id="log"
-        onClick={this.handleLogout}
-      >
-        Log Out
-      </Button>
-    );
     let url =
       "http://ny-southampton.civicplus.com/1054/Southampton-Arts-and-Culture-Committee-S";
 
@@ -59,7 +49,11 @@ class NavBar extends React.Component {
             />
             <Menu.Item id="log">
               {this.props.loggedIn ? (
-                logout
+                <Route
+                  path="/919ddbbc6483b8b243d0592f5432a2fd/login"
+                  //md5 of shacc-approved
+                  render={() => <Logout logout={this.handleLogout} />}
+                />
               ) : (
                 <Route
                   path="/919ddbbc6483b8b243d0592f5432a2fd/login"
