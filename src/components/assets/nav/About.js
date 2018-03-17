@@ -52,8 +52,10 @@ export default class About extends React.Component {
             116 Hampton Road Southampton, NY 11968
           </p>
         </div>
-        <div className="resource map" />
-        <div className="resource canal" />
+        <div className="resource">
+          <div className="map" />
+          <div className="canal" />
+        </div>
       </div>
     );
   }

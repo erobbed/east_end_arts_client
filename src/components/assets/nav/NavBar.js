@@ -37,7 +37,9 @@ class NavBar extends React.Component {
     return (
       <Segment className="nav">
         <Menu pointing secondary className="main-nav" size="tiny">
-          <Menu.Item href={url} name="Town of Southampton" key="home" />
+          <Menu.Item href={url} key="home">
+            Town of Southampton
+          </Menu.Item>
           <Menu.Item
             onClick={this.handleMission}
             name="Mission"

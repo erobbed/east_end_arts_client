@@ -29,6 +29,8 @@ class GroupContainer extends React.Component {
         />
       ));
 
+    console.log(this.props.selectedGroup.name);
+
     return (
       <div style={this.props.css}>
         <Dropdown
@@ -37,6 +39,7 @@ class GroupContainer extends React.Component {
           fluid
           selection
           options={groups}
+          value={this.props.selectedGroup ? this.props.selectedGroup.name : ""}
         />
         <AddGroupModal />
         {this.props.selectedGroup ? (

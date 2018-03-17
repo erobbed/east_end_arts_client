@@ -46,7 +46,7 @@ export default function withFilter(Calendar) {
       return (
         <div className="filter column riight" style={this.props.style}>
           <h2 className="title">
-            Calendar of Arts and Culture on the East End
+            calendar of arts and culture on the east end
           </h2>
           {this.props.loggedIn ? (
             <GroupContainer
