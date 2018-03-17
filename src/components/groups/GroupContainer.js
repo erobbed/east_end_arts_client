@@ -29,8 +29,6 @@ class GroupContainer extends React.Component {
         />
       ));
 
-    console.log(this.props.selectedGroup.name);
-
     return (
       <div style={this.props.css}>
         <Dropdown
