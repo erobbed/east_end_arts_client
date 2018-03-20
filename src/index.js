@@ -8,6 +8,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import registerServiceWorker from "./registerServiceWorker";
 import authReducer from "./reducers/authReducer";
 import eventReducer from "./reducers/eventReducer";
+import userReducer from "./reducers/userReducer";
 import groupReducer from "./reducers/groupReducer";
 import noticeReducer from "./reducers/noticeReducer";
 import thunk from "redux-thunk";
@@ -29,7 +30,8 @@ const rootReducer = combineReducers({
   auth: authReducer,
   groups: groupReducer,
   events: eventReducer,
-  notice: noticeReducer
+  notice: noticeReducer,
+  users: userReducer
 });
 const store = createStore(
   rootReducer,

@@ -1,7 +1,9 @@
 import React from "react";
+import Admin from "../assets/admin/Admin";
 import Footer from "../assets/Footer";
 import GroupContainer from "../groups/GroupContainer";
 import { Dropdown } from "semantic-ui-react";
+import { Route } from "react-router";
 
 export default function withFilter(Calendar) {
   return class extends React.Component {
@@ -48,6 +50,11 @@ export default function withFilter(Calendar) {
           <h2 className="title">
             calendar of arts and culture on the east end
           </h2>
+          <Route
+            path="/919ddbbc6483b8b243d0592f5432a2fd/admin"
+            //md5 of shacc-approved
+            component={Admin}
+          />
           {this.props.loggedIn ? (
             <GroupContainer
               groups={this.props.groups}
