@@ -377,6 +377,17 @@ h6 {
   margin-left: 1%;
 }
 
+div.header.user {
+  font-family: "OratorStd" !important;
+}
+
+.ui.toggle.checkbox.admin-toggle input:checked ~ .box:before,
+.ui.toggle.checkbox.admin-toggle input:checked ~ label:before,
+.ui.toggle.checkbox.admin-toggle input:focus:checked ~ .box:before,
+.ui.toggle.checkbox.admin-toggle input:focus:checked ~ label:before {
+  background-color: rgb(70, 194, 10) !important;
+}
+
 .addgroup {
   white-space: nowrap;
   border-radius: 0rem;

@@ -10,7 +10,7 @@ class User extends React.Component {
     return (
       <List.Item>
         <List.Content>
-          <List.Header>
+          <List.Header className="user">
             {this.props.username}
             {this.props.admin ? (
               <Checkbox
@@ -19,6 +19,7 @@ class User extends React.Component {
                 style={{ float: "right" }}
                 onChange={this.handleChange}
                 defaultChecked
+                className="admin-toggle"
               />
             ) : (
               <Checkbox
