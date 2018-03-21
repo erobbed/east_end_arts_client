@@ -272,6 +272,7 @@ h2 {
   background-color: rgb(231, 255, 255);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   height: 13vh;
+  overflow-y: auto;
 }
 
 .meetings > p {
@@ -285,14 +286,14 @@ h2 {
 }
 
 .map {
-  background-image: url("/Map.png");
+  background-image: url("/map2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 20vh;
 }
 
 .canal {
-  background-image: url("/Canal.jpg");
+  background-image: url("/plane.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 20vh;
