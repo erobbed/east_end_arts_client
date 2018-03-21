@@ -44,7 +44,6 @@ class App extends Component {
     } else {
       this.props.getEvents();
       this.props.getLatestNotice();
-      this.props.getUsers();
     }
   }
 
