@@ -2,8 +2,9 @@ import React from "react";
 import { Modal, Card } from "semantic-ui-react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { publish } from "../../actions/eventActions";
+import { publish, deleteEvent } from "../../actions/eventActions";
 import PublishButton from "./PublishButton";
+import DeleteButton from "./DeleteButton";
 import MapContainer from "../assets/Map";
 import moment from "moment";
 
@@ -21,6 +22,11 @@ class Event extends React.Component {
     this.props.publish(this.props.event.id);
   };
 
+  deleteEvent = () => {
+    this.props.deleteEvent(this.props.event.id);
+    this.props.close();
+  };
+
   render() {
     const group_admin =
       this.props.user &&
@@ -31,10 +37,13 @@ class Event extends React.Component {
         .includes(this.props.user.id);
     const admin =
       group_admin || this.props.user.admin ? (
-        <PublishButton
-          public={this.props.event.public}
-          publish={this.publish}
-        />
+        <div>
+          <PublishButton
+            public={this.props.event.public}
+            publish={this.publish}
+          />{" "}
+          <DeleteButton deleteEvent={this.deleteEvent} />
+        </div>
       ) : null;
     return (
       <Modal
@@ -73,7 +82,7 @@ class Event extends React.Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ publish }, dispatch);
+  return bindActionCreators({ publish, deleteEvent }, dispatch);
 }
 
 function mapStateToProps(state) {

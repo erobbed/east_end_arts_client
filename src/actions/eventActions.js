@@ -64,6 +64,34 @@ export function publish(eventId) {
   };
 }
 
+export function deleteEvent(eventId) {
+  const body = {
+    method: "DELETE",
+    headers: {
+      "content-type": "application/json",
+      accept: "application/json"
+    },
+    body: JSON.stringify({ event: eventId })
+  };
+
+  return dispatch => {
+    return fetch(`${process.env.REACT_APP_RAILS_URL}/events/${eventId}`, body)
+      .then(res => res.json())
+      .then(res => {
+        if (res.success) {
+          dispatch({
+            type: "SET_EVENTS",
+            payload: {
+              events: res.events
+            }
+          });
+        } else {
+          return res.failure;
+        }
+      });
+  };
+}
+
 export function getEvents() {
   return dispatch => {
     return fetch(`${process.env.REACT_APP_RAILS_URL}/events`)

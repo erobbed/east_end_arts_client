@@ -16,7 +16,6 @@ export default class PublishButton extends React.Component {
     return (
       <Button
         toggle
-        circular
         size="mini"
         active={this.state.active}
         onClick={this.handleClick}
