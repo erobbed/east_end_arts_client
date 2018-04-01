@@ -59,12 +59,23 @@ class Event extends React.Component {
         <Modal.Content>
           <Card className="event">
             <Card.Content>
-              <Card.Description>{this.props.event.details}</Card.Description>
+              <Card.Description>
+                <label>
+                  <strong>Details: </strong>
+                </label>
+                {this.props.event.details}
+              </Card.Description>
               <Card.Meta>
+                <label>
+                  <strong>Start: </strong>
+                </label>
                 {moment(this.props.event.startDate).format(
                   "MMMM Do YYYY, h:mm a"
                 )}
                 <br />
+                <label>
+                  <strong>End: </strong>
+                </label>
                 {moment(this.props.event.endDate).format(
                   "MMMM Do YYYY, h:mm a"
                 )}

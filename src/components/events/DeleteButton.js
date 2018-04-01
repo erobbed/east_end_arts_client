@@ -8,7 +8,7 @@ export default class DeleteButton extends React.Component {
 
   render() {
     return (
-      <Button size="mini" onClick={this.handleClick}>
+      <Button size="mini" className="delete" onClick={this.handleClick}>
         Delete Event
       </Button>
     );

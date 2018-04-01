@@ -9,6 +9,7 @@ const LoginButton = props => {
         animated="fade"
         color="green"
         onClick={props.handleClick}
+        className="new"
       >
         <Button.Content visible>Log In</Button.Content>
         <Button.Content hidden>

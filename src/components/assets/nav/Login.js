@@ -56,7 +56,9 @@ class Login extends React.Component {
             id="password"
           />
         </Form.Field>
-        <Button type="submit">Log In</Button>
+        <Button type="submit" className="new">
+          Log In
+        </Button>
       </Form>
     );
   }

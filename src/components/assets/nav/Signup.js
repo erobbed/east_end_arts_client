@@ -79,7 +79,9 @@ class Signup extends React.Component {
             type="password"
           />
         </Form.Field>
-        <Button type="submit">Sign Up</Button>
+        <Button type="submit" className="new">
+          Sign Up
+        </Button>
       </Form>
     );
   }

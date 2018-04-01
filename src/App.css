@@ -22,7 +22,7 @@
   margin: 0 auto;
 }
 
-.ui.fluid.dropdown.categories {
+.ui.fluid.dropdown {
   width: auto;
   float: right;
   margin-right: 1%;
@@ -34,7 +34,7 @@
 
 .ui.fluid.dropdown.groups {
   border-radius: 0rem;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-family: "OratorStd";
   width: 25%;
   margin: 0 auto;
   margin-right: 1%;
@@ -45,11 +45,34 @@
   font-size: 2vmin;
 }
 
-.ui.button.submit {
+.ui.button.new {
   border-radius: 0rem;
   font-family: "OratorStd", sans-serif !important;
+  background-color: white;
+  border: 1px solid #adadad;
+}
+
+.ui.button.submit {
+  color: white;
+  background-color: rgb(53, 117, 171);
+}
+
+.ui.button.delete {
+  color: white;
+  background-color: rgb(232, 69, 60);
+  border-radius: 0rem;
+  font-family: "OratorStd";
+}
+
+.ui.button.delete:hover {
+  color: white;
+  background-color: rgb(202, 59, 20);
+}
+
+.ui.button.submit:hover {
   background-color: rgb(53, 117, 171);
   color: white;
+  border-color: white;
 }
 
 .ui.form .field > label {
@@ -59,6 +82,8 @@
 
 .ui.button.toggle {
   float: right;
+  border-radius: 0rem;
+  font-family: "OratorStd";
 }
 
 .ui.card.event {
@@ -72,6 +97,14 @@
 
 .ui.checkbox input.hidden + label {
   font-size: 2vmin;
+}
+
+.ui.form input,
+.ui.form textarea,
+.ui.form .field > label,
+.ui.form .field .ui.input input,
+.ui.form .fields .field .ui.input input {
+  font-family: "OratorStd" !important;
 }
 
 h1 {
@@ -459,6 +492,10 @@ span.rbc-toolbar-label {
   font-family: "OratorStd";
 }
 
+.rbc-row-segment .rbc-event-content {
+  font-family: "OratorStd";
+}
+
 .react-datepicker__time-container
   .react-datepicker__time
   .react-datepicker__time-box
@@ -467,11 +504,12 @@ span.rbc-toolbar-label {
 }
 
 .react-datepicker-wrapper {
-  width: auto;
+  width: 50%;
 }
 
 .react-datepicker__input-container {
   margin-bottom: 1em;
+  width: 100%;
 }
 
 .geosuggest {

@@ -132,7 +132,7 @@ class CreateEvent extends React.Component {
             dateFormat="LLL"
           />
         </Form.Field>
-        <Button type="submit" className="submit" size="mini">
+        <Button type="submit" className="new submit" size="mini">
           Submit
         </Button>
       </Form>
