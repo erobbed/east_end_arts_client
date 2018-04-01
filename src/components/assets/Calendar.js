@@ -47,6 +47,7 @@ class MyCalendar extends React.Component {
           endAccessor="endDate"
           onSelectEvent={this.handleSelect}
           views={["month", "week", "agenda"]}
+          min={moment("8:00am", "h:mma").toDate()}
         />
       </div>
     );
