@@ -64,14 +64,18 @@ class CreateEvent extends React.Component {
   };
 
   handleSelect = e => {
+    let id = e.currentTarget.id
+      ? e.currentTarget.id
+      : e.target.parentElement.id;
+
     this.setState({
-      category: e.target.parentElement.id
+      category: id
     });
   };
 
   render() {
     let categories = this.props.categories.map((cat, index) => {
-      return { key: index, text: cat, id: index + 1, value: cat };
+      return { key: index, text: cat, id: index + 1, value: index + 1 };
     });
     return (
       <Form onSubmit={this.handleSubmit}>
