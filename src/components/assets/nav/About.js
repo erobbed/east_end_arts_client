@@ -3,7 +3,7 @@ import React from "react";
 export default class About extends React.Component {
   render() {
     const members = [
-      "Hope Sandrow, Chair",
+      "Hope Sandrow, Founding Chair",
       "Geoffrey Drummond",
       "April Gornik",
       "Dorothy Lichtenstein",
@@ -46,9 +46,8 @@ export default class About extends React.Component {
         <div className="meetings">
           <h6>MEETINGS</h6>
           <p>
-            6:30pm @ Third Monday of each month <br />
-            Conference Room: Town Hall <br />
-            Lower Level Meeting Room <br />
+            Monthly Meetings <br />
+            Town Hall Lower Level Meeting Room <br />
             116 Hampton Road Southampton, NY 11968
           </p>
         </div>

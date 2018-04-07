@@ -186,7 +186,7 @@ h2 {
   }
 
   .resource {
-    height: 10vh;
+    height: 30vw;
   }
 
   .ui.segment.nav {
@@ -209,6 +209,14 @@ h2 {
   .header.item {
     margin: 0 auto;
     width: 40%;
+  }
+
+  .column.left {
+    margin-top: 13%;
+  }
+
+  div.members {
+    margin: 10% 0;
   }
 }
 
@@ -304,7 +312,7 @@ h2 {
   text-align: left;
   background-color: rgb(231, 255, 255);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  height: 13vh;
+  height: 15vmin;
   overflow-y: auto;
 }
 
@@ -315,25 +323,27 @@ h2 {
 }
 
 .resource {
-  margin-top: 3%;
+  margin: 3% 0;
 }
 
 .map {
   background-image: url("/map2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 20vh;
+  height: 13vw;
+  margin: 3% 0;
 }
 
 .canal {
   background-image: url("/plane.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 20vh;
+  height: 13vw;
+  margin: 3% 0;
 }
 
 .members {
-  margin: 1%;
+  margin: 5% 0;
 }
 
 .groups {
@@ -378,7 +388,6 @@ h6 {
   -webkit-transition: opacity 1s ease-in-out, left 1s, ease-in-out width 1s;
   transition: opacity 1s ease-in-out, left 1s, ease-in-out width 1s;
   font-size: 1em;
-  margin-top: 4%;
 }
 
 .riight {

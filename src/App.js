@@ -77,8 +77,8 @@ class App extends Component {
       : { maxHeight: "0px", opacity: "0" };
 
     let about = this.state.about
-      ? { width: "90%", opacity: "1" }
-      : { width: "0px", opacity: "0" };
+      ? { width: "90%", opacity: "1", height: "auto" }
+      : { width: "0px", opacity: "0", height: "0" };
 
     return (
       <div className="App">

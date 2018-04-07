@@ -5,9 +5,9 @@ const Mission = props => {
     <p>
       The Southampton Arts and Culture Committee (SHACC)’s mission is to advise
       the Town of Southampton on promoting greater exposure and participation in
-      arts and culture-related activities through creative collaboration. Its
-      goal is to inspire engagement with art in historical, cultural, and social
-      contexts on the East End of Long Island.
+      arts and culture-related activities through creative collaboration.
+      Founded in 2017, its goal is to inspire engagement with art in historical,
+      cultural, and social contexts on the East End of Long Island.
     </p>
   );
 };
