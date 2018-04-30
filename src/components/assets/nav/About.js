@@ -3,15 +3,15 @@ import React from "react";
 export default class About extends React.Component {
   render() {
     const members = [
-      "Hope Sandrow, Founding Chair",
-      "Geoffrey Drummond",
-      "April Gornik",
-      "Dorothy Lichtenstein",
-      "Minerva Perez",
-      "Elka Rifkin",
-      "Brenda Simmons",
-      "Terrie Sultan",
-      "Shane Weeks"
+      "Hope Sandrow, Chair *",
+      "Geoffrey Drummond *",
+      "April Gornik *",
+      "Dorothy Lichtenstein *",
+      "Minerva Perez *",
+      "Elka Rifkin *",
+      "Brenda Simmons *",
+      "Terrie Sultan *",
+      "Shane Weeks *"
     ];
 
     return (
@@ -42,6 +42,8 @@ export default class About extends React.Component {
               <a href="tel:+16312875745">+1 (631) 287-5745</a>
             </li>
           </ul>
+          <br />
+          <p className="legend">* Founding Member 2017</p>
         </div>
         <div className="meetings">
           <h6>MEETINGS</h6>

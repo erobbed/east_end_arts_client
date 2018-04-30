@@ -363,7 +363,8 @@ h2 {
 
 ul,
 li,
-li > a {
+li > a,
+p.legend {
   font-size: 1.5vmin;
   list-style-type: none;
   text-align: left;
