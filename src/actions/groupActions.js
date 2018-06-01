@@ -1,11 +1,11 @@
-export function selectGroup(group) {
+export function selectGroup(id) {
   const body = {
     method: "POST",
     headers: {
       "content-type": "application/json",
       accept: "application/json"
     },
-    body: JSON.stringify(group)
+    body: JSON.stringify({ group: { id: id } })
   };
 
   return dispatch => {

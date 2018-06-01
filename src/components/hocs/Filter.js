@@ -56,10 +56,16 @@ export default function withFilter(Calendar) {
             component={Admin}
           />
           {this.props.loggedIn ? (
-            <GroupContainer
-              groups={this.props.groups}
-              selectedGroup={this.props.selectedGroup}
-              css={groups}
+            <Route
+              path="/919ddbbc6483b8b243d0592f5432a2fd"
+              //md5 of shacc-approved
+              render={() => (
+                <GroupContainer
+                  groups={this.props.groups}
+                  selectedGroup={this.props.selectedGroup}
+                  css={groups}
+                />
+              )}
             />
           ) : null}
           <Calendar

@@ -1,10 +1,25 @@
 import React from "react";
-import Group from "./Group";
 import { Dropdown } from "semantic-ui-react";
+import { Route } from "react-router";
 import AddGroupModal from "./AddGroupModal";
 import AddEventModal from "../events/AddEventModal";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { selectGroup, deselectGroup } from "../../actions/groupActions";
 
 class GroupContainer extends React.Component {
+  handleChange = (e, { value }) => {
+    if (this.props.selectedGroup) {
+      if (this.props.selectedGroup.id === value) {
+        this.props.deselectGroup();
+      } else {
+        this.props.selectGroup(value);
+      }
+    } else {
+      this.props.selectGroup(value);
+    }
+  };
+
   render() {
     let sortable = (a, b) => {
       let newA =
@@ -17,17 +32,10 @@ class GroupContainer extends React.Component {
           : b.name.split(" ")[0];
       return newA < newB ? -1 : newA > newB ? 1 : 0;
     };
-    let groups = this.props.groups
-      .sort((a, b) => sortable(a, b))
-      .map(group => (
-        <Group
-          group={group}
-          key={group.id}
-          text={group.name}
-          selectedGroup={this.props.selectedGroup}
-          value={group.name}
-        />
-      ));
+
+    let groups = this.props.groups.sort((a, b) => sortable(a, b)).map(group => {
+      return { key: group.id, text: group.name, value: group.id };
+    });
 
     return (
       <div style={this.props.css}>
@@ -37,7 +45,8 @@ class GroupContainer extends React.Component {
           fluid
           selection
           options={groups}
-          value={this.props.selectedGroup ? this.props.selectedGroup.name : ""}
+          onChange={this.handleChange}
+          value={this.props.selectedGroup ? this.props.selectedGroup.id : ""}
         />
         <AddGroupModal />
         {this.props.selectedGroup ? (
@@ -48,4 +57,8 @@ class GroupContainer extends React.Component {
   }
 }
 
-export default GroupContainer;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ selectGroup, deselectGroup }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(GroupContainer);

@@ -41,6 +41,15 @@
   float: right;
 }
 
+.groups.ui.dropdown .menu .selected.item,
+.ui.dropdown.selected,
+.ui.dropdown .menu .active.item {
+  font-weight: bold;
+  text-decoration: underline;
+  color: white;
+  background-color: rgb(53, 117, 171);
+}
+
 .ui.selection.dropdown .menu > .item {
   font-size: 2vmin;
 }
