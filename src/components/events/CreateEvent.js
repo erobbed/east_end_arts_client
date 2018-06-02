@@ -68,6 +68,8 @@ class CreateEvent extends React.Component {
       ? e.currentTarget.id
       : e.target.parentElement.id;
 
+    console.log(id);
+
     this.setState({
       category: id
     });
@@ -75,7 +77,7 @@ class CreateEvent extends React.Component {
 
   render() {
     let categories = this.props.categories.map((cat, index) => {
-      return { key: index, text: cat, id: index + 1, value: index + 1 };
+      return { key: index, text: cat.name, id: cat.id, value: cat.id };
     });
     return (
       <Form onSubmit={this.handleSubmit}>

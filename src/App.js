@@ -29,6 +29,7 @@ class App extends Component {
       { id: 8, name: "Film" },
       { id: 9, name: "Lecture" },
       { id: 10, name: "Literary" },
+      { id: 16, name: "Meeting" },
       { id: 11, name: "Music" },
       { id: 12, name: "Nature" },
       { id: 13, name: "Performance" },

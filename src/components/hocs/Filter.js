@@ -23,7 +23,8 @@ export default function withFilter(Calendar) {
       13: true,
       14: true,
       15: true,
-      selected: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+      16: true,
+      selected: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
     };
 
     handleChange = (e, obj) => {
