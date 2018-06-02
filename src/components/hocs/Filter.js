@@ -84,6 +84,10 @@ export default function withFilter(Calendar) {
             defaultValue={this.state.selected}
           />
           <Footer usable={bool} user={this.props.user} />
+          <p>
+            This web calendar application was created by Ethan R. Roberts, Full
+            Stack Engineer | NYC
+          </p>
         </div>
       );
     }

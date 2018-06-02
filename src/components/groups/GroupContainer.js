@@ -1,6 +1,5 @@
 import React from "react";
 import { Dropdown } from "semantic-ui-react";
-import { Route } from "react-router";
 import AddGroupModal from "./AddGroupModal";
 import AddEventModal from "../events/AddEventModal";
 import { connect } from "react-redux";
