@@ -32,7 +32,7 @@ export default class About extends React.Component {
             <li>
               <a href="tel:+16312836055">+1 (631) 283-6055</a>
             </li>
-            <li>Tommie John Schiavoni, Town Council Liaison</li>
+            <li>Tommy John Schiavoni, Town Council Liaison</li>
             <li>
               <a href="mailto:tjschiavoni@southamptontownny.gov">
                 tjschiavoni@southamptontownny.gov
@@ -48,7 +48,7 @@ export default class About extends React.Component {
         <div className="meetings">
           <h6>MEETINGS</h6>
           <p>
-            Monthly Meetings <br />
+            SHACC Monthly Meetings <br />
             Town Hall Lower Level Meeting Room <br />
             116 Hampton Road Southampton, NY 11968
           </p>
