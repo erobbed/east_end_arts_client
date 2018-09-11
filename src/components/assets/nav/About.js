@@ -4,12 +4,16 @@ export default class About extends React.Component {
   render() {
     const members = [
       "Hope Sandrow, Chair *",
+      "Nina Channing",
+      "Cara Conklin-Wingfield",
+      "Jeremy Dennis",
       "Geoffrey Drummond *",
+      "Esly E. Escobar",
       "April Gornik *",
-      "Dorothy Lichtenstein *",
+      "Jane Iselin",
+      "Dr. Scarlet Magda",
       "Minerva Perez *",
       "Elka Rifkin *",
-      "Brenda Simmons *",
       "Terrie Sultan *",
       "Shane Weeks *"
     ];
@@ -41,6 +45,8 @@ export default class About extends React.Component {
             <li>
               <a href="tel:+16312875745">+1 (631) 287-5745</a>
             </li>
+            <li>Dorothy Lichtenstein *</li>
+            <li>Brenda Simmons *</li>
           </ul>
           <br />
           <p className="legend">* Founding Member 2017</p>
