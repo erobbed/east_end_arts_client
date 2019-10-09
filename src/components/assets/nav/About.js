@@ -11,7 +11,11 @@ export default class About extends React.Component {
       "Esly E. Escobar",
       "April Gornik *",
       "Jane Iselin",
-      "Dr. Scarlet Magda",
+      "Rebecca Chapman",
+      "Tom Dunn",
+      "Jane Gill",
+      "Kathleen Marder",
+      "Mark-Antonio Smith",
       "Minerva Perez *",
       "Elka Rifkin *",
       "Terrie Sultan *",
@@ -22,7 +26,11 @@ export default class About extends React.Component {
       <div>
         <div className="members">
           <h6>COMMITTEE MEMBERS</h6>
-          <ul>{members.map((mem, ind) => <li key={ind}>{mem}</li>)}</ul>
+          <ul>
+            {members.map((mem, ind) => (
+              <li key={ind}>{mem}</li>
+            ))}
+          </ul>
         </div>
         <div className="members">
           <h6>EX-OFFICIO </h6>
