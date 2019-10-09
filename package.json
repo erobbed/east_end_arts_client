@@ -6,6 +6,7 @@
     "firebase": "^4.8.1",
     "fsevents": "^2.1.0",
     "google-maps-react": "^1.1.2",
+    "moment": "^2.24.0",
     "react": "^16.2.0",
     "react-big-calendar": "^0.17.0",
     "react-contenteditable": "^2.0.5",
@@ -19,12 +20,24 @@
     "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.2.0",
     "semantic-ui-css": "^2.2.12",
-    "semantic-ui-react": "^0.77.0"
+    "semantic-ui-react": "^0.77.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

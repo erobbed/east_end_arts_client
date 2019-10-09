@@ -28,6 +28,14 @@ class Event extends React.Component {
   };
 
   render() {
+    const inlineStyle = {
+      modal: {
+        marginTop: "0px !important",
+        marginLeft: "auto",
+        marginRight: "auto"
+      }
+    };
+
     const group_admin =
       this.props.user &&
       this.props.selectedGroup &&
@@ -51,6 +59,7 @@ class Event extends React.Component {
         open={this.state.open}
         closeIcon
         onClose={this.handleClose}
+        style={inlineStyle.modal}
       >
         <Modal.Header>
           {this.props.event.title}
@@ -100,4 +109,7 @@ function mapStateToProps(state) {
   return { user: state.auth.user, selectedGroup: state.groups.selectedGroup };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Event);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Event);
